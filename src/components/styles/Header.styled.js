@@ -10,38 +10,21 @@ const progressAnimation = keyframes`
 `;
 
 export const NavBar = styled.nav`
-  padding-top: 10px;
-  padding-bottom: 10px;
   background-color: var(--white-color);
   display: flex;
   align-content: center;
   justify-content: space-around;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  padding: 20px 0;
   width: 100%;
-  @media (min-width: 576px) {
-    width: 540px;
-  }
-  @media (min-width: 768px) {
-    width: 720px;
-  }
-  @media (min-width: 992px) {
-    width: 960px;
-  }
-  @media (min-width: 1200px) {
-    width: 1140px;
-  }
-  @media (min-width: 1400px) {
-    width: 1320px;
-  }
+  border-bottom: 1px solid var(--light-gray-color);
+  box-shadow: 1px 1px 2px 1px var(--light-gray-color);
 `;
 
 export const Nav = styled.ul`
   list-style: none;
   display: flex;
   align-content: center;
+  justify-content: center;
 `;
 
 const StyledNavItem = styled.li`
@@ -50,6 +33,7 @@ const StyledNavItem = styled.li`
 
 export const NavLink = styled.a`
   text-transform: uppercase;
+
   font-weight: 700;
   line-height: 10px;
   letter-spacing: 0;
@@ -69,36 +53,47 @@ export const NavLink = styled.a`
   }
 `;
 
-export const NavItemLogo = styled.a`
+export const NavLogoLink = styled.a`
   font-family: "Amira Beauty";
   padding: 5px;
-  font-size: 25px;
-  width: fit-content;
-  position: relative;
-  display: flex;
+  font-size: 30px;
+  text-transform: uppercase;
   cursor: pointer;
-  &::before,
+
   &::after {
     content: "";
-    width: 12px;
-    height: 12px;
-    background-color: var(--secondary-color);
-    position: absolute;
-    border-radius: 50%;
-    top: 50%;
-    transform: translateY(-50%);
+    display: block;
+    width: 0;
+    height: 2px;
+    margin-top: 2px;
+    background-color: var(--primary-color);
   }
 
-  &::before {
-    left: -30px;
+  &:hover::after {
+    width: 100%;
+    animation: ${progressAnimation} 0.5s linear;
   }
-  &::after {
-    right: -30px;
-  }
+`;
+
+export const NavLogo = styled.img`
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
 `;
 
 export const NavItem = ({ children }) => (
   <StyledNavItem>
     <NavLink>{children}</NavLink>
   </StyledNavItem>
+);
+
+const StyledNavItemIcon = styled.li`
+  margin: 0 12px;
+  font-size: 20px;
+`;
+
+export const NavItemIcon = ({ children }) => (
+  <StyledNavItemIcon>
+    <NavLink>{children}</NavLink>
+  </StyledNavItemIcon>
 );

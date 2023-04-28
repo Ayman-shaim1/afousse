@@ -5,8 +5,7 @@ const App = () => {
     <>
       <GlobalStyle />
       <Header />
-      <h1>hello world</h1>
-      <h1 className="title">hello world</h1>
+      <h1 className="title">Hello World</h1>
     </>
   );
 };

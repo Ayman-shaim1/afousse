@@ -31,7 +31,6 @@ body {
     position: absolute;
     border-radius: 50%;
     top: 50%;
-    transform: translateY(-50%);
   }
  
   &::before {
