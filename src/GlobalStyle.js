@@ -2,17 +2,20 @@ import { createGlobalStyle } from "styled-components";
 import AmiraBeauty from "./assets/fonts/AmiraBeauty.otf";
 
 const GlobalStyle = createGlobalStyle`
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap");
 @font-face {
     font-family: 'Amira Beauty';
     src: url(${AmiraBeauty}) format('truetype');
 }
 
 body {
-  font-family: "Nunito Sans", sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
   letter-spacing: 1px;
 }
+a{
+  color:var(--black-color);
+  text-decoration:none;
 
+}
 .title {
   font-family:'Amira Beauty';
   margin: 0 auto 80px;

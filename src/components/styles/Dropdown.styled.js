@@ -1,8 +1,36 @@
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
-export const Dropdown = styled.div`
+const StyledDropdown = styled.div`
   position: relative;
+  & > ul {
+    display: ${props => (props.show ? "block" : "none")};
+  }
 `;
+
+export const Dropdown = ({ children }) => {
+  const [show, setShow] = useState(false);
+  const showMenu = () => setShow(true);
+
+  const dropdownRef = useRef(null);
+
+  const closeMenu = e => {
+    if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+      setShow(false);
+    }
+  };
+  useEffect(() => {
+    document.addEventListener("click", closeMenu);
+    return () => {
+      document.removeEventListener("click", closeMenu);
+    };
+  }, []);
+  return (
+    <StyledDropdown show={show} ref={dropdownRef} onClick={showMenu}>
+      {children}
+    </StyledDropdown>
+  );
+};
 
 export const DropdownMenu = styled.ul`
   position: absolute;
