@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
-import React, { useEffect, useRef, useState } from "react";
+// import React, { useEffect, useRef, useState } from "react";
 
 const progressAnimation = keyframes`
   from {
@@ -20,6 +20,17 @@ export const NavBar = styled.nav`
   width: 100%;
   border-bottom: 1px solid var(--light-gray-color);
   box-shadow: 1px 1px 2px 1px var(--light-gray-color);
+  @media (max-width: 1200px) {
+    & > :nth-child(2),
+    > :nth-child(3) {
+      flex-direction: column;
+      display: none;
+    }
+    & > :nth-child(4) {
+   
+      display: flex;
+    }
+  }
 `;
 
 export const Nav = styled.ul`
@@ -30,7 +41,7 @@ export const Nav = styled.ul`
 `;
 
 const StyledNavItem = styled.li`
-  margin: 0 5px;
+  margin: 0 10px;
 `;
 
 export const NavLink = styled(Link)`
@@ -38,7 +49,6 @@ export const NavLink = styled(Link)`
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
-  line-height: 10px;
   transition: 0.1s;
   cursor: pointer;
   &::after {
@@ -60,26 +70,11 @@ export const NavLink = styled(Link)`
 
 export const NavLogoLink = styled(Link)`
   font-family: "Amira Beauty";
-  padding: 5px;
   font-size: 30px;
   text-transform: uppercase;
   color: var(--black-color);
   text-decoration: none;
   cursor: pointer;
-
-  &::after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 2px;
-    margin-top: 2px;
-    background-color: var(--primary-color);
-  }
-
-  &:hover::after {
-    animation: ${progressAnimation} 0.5s linear;
-    width: 100%;
-  }
 `;
 
 export const NavLogo = styled.img`
@@ -96,61 +91,45 @@ export const NavItem = ({ children, to }) => (
 
 const StyledNavItemIcon = styled.li`
   margin: 0 12px;
-  font-size: 20px;
+  font-size: 16px;
+`;
+
+const NavLinkIcon = styled.a`
+  color: var(--dark-gray-color);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: 0.1s;
+  cursor: pointer;
+  &:hover {
+    color: var(--black-color);
+  }
 `;
 
 export const NavItemIcon = ({ children, to }) => (
   <StyledNavItemIcon>
-    <NavLink to={to}>{children}</NavLink>
+    <NavLinkIcon to={to}>{children}</NavLinkIcon>
   </StyledNavItemIcon>
 );
 
 const StyledNavDropdown = styled.div`
   position: relative;
-  & > div {
-    display: ${props => (props.show ? "block" : "none")};
+  &:hover div {
+    display: block;
+  }
+  &::after {
   }
 `;
-
-export const NavDropdown = ({ children }) => {
-  const [show, setShow] = useState(false);
-  const [itemClicked, setItemClicked] = useState(false);
-  const showMenu = () => setShow(true);
-
-  const NavdropdownRef = useRef(null);
-
-  const closeMenu = e => {
-    if (NavdropdownRef.current && !NavdropdownRef.current.contains(e.target)) {
-      setShow(false);
-    }
-  };
-  useEffect(() => {
-    document.addEventListener("click", closeMenu);
-    return () => {
-      document.removeEventListener("click", closeMenu);
-    };
-  }, []);
-  useEffect(() => {
-    if (itemClicked) {
-      setShow(false);
-    }
-    setItemClicked(false);
-  }, [itemClicked]);
-  return (
-    <StyledNavDropdown show={show} ref={NavdropdownRef} onClick={showMenu}>
-      {React.Children.map(children, child =>
-        React.cloneElement(child, { onClick: () => setItemClicked(true) })
-      )}
-    </StyledNavDropdown>
-  );
-};
-
+export const NavDropdown = ({ children }) => (
+  <StyledNavDropdown>{children}</StyledNavDropdown>
+);
 export const NavDropdownMenu = styled.div`
   position: absolute;
+  display: none;
   width: 150px;
   border: 1px solid var(--gray-color);
   padding: 0;
-  margin-top: 10px;
+  margin-top: 5px;
   transform: translateX(-30%);
   background-color: #fff;
   z-index: 1000;
