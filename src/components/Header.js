@@ -19,7 +19,7 @@ const Header = () => {
 
   return (
     <>
-      <NavBar bg="black">
+      <NavBar bg="primary">
         <Nav>
           <NavLink to="/home">+212 06 10 20 30 40</NavLink>
         </Nav>

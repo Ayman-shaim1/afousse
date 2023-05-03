@@ -15,7 +15,7 @@ const openNav = keyframes`
     top:0;
   }
   to {
-    top:10%;
+      top: 16%;
   }
 `;
 
@@ -26,7 +26,7 @@ export const NavBar = styled.nav`
   justify-content: space-around;
   padding: 10px 0;
   width: 100%;
-  background-color: ${(props) =>
+  background-color: ${props =>
     props.bg ? "var(--" + props.bg + "-color)" : "var(--white-color)"};
 
   & > :nth-child(4) {
@@ -53,16 +53,16 @@ export const Nav = styled.div`
 
 export const NavReponsive = styled(Nav)`
   @media (max-width: 1200px) {
-    display: ${(props) => (props.show ? "flex" : "none")} !important;
-    /* background-color: red; */
+    display: ${props => (props.show ? "flex" : "none")} !important;
+    background-color: var(--white-color);
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: absolute;
     animation: ${openNav} 0.3s linear;
-    top: 10%;
+    top: 16%;
     width: 100%;
-    z-index: 100;
+    z-index: 1000;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 4px -1px,
       rgba(0, 0, 0, 0.06) 0px 2px 3px -1px;
     & > a {
@@ -133,7 +133,7 @@ export const NavItemIcon = styled.a`
   margin: 0 12px;
   font-size: 18px;
   font-weight: bold;
-  color: ${(props) =>
+  color: ${props =>
     props.darker ? "var(--dark-gray-color)" : "var(--gray-color)"};
   text-decoration: none;
   text-transform: uppercase;
