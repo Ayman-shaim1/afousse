@@ -1,6 +1,5 @@
 import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
-// import React, { useEffect, useRef, useState } from "react";
 
 const progressAnimation = keyframes`
   from {
@@ -11,24 +10,30 @@ const progressAnimation = keyframes`
   }
 `;
 
+const openNav = keyframes`
+ from {
+    top:0;
+  }
+  to {
+    top:10%;
+  }
+`;
+
 export const NavBar = styled.nav`
   background: transparent;
   display: flex;
   align-content: center;
   justify-content: space-around;
-  padding: 30px 0;
+  padding: 10px 0;
   width: 100%;
+  background-color: ${(props) =>
+    props.bg ? "var(--" + props.bg + "-color)" : "var(--white-color)"};
 
   & > :nth-child(4) {
     display: none;
   }
 
   @media (max-width: 1200px) {
-    justify-content: space-between;
-    & > :nth-child(2) {
-      flex-direction: column;
-      display: ${(props) => (props.show ? "flex" : "none")};
-    }
     & > :nth-child(3) {
       flex-direction: column;
       display: none;
@@ -43,8 +48,35 @@ export const Nav = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.4s;
 `;
 
+export const NavReponsive = styled(Nav)`
+  @media (max-width: 1200px) {
+    display: ${(props) => (props.show ? "flex" : "none")} !important;
+    /* background-color: red; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    animation: ${openNav} 0.3s linear;
+    top: 10%;
+    width: 100%;
+    z-index: 100;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 4px -1px,
+      rgba(0, 0, 0, 0.06) 0px 2px 3px -1px;
+    & > a {
+      margin: 5px 0;
+    }
+  }
+`;
+export const NavLink = styled(Link)`
+  color: var(--white-color);
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  transition: 0.1s;
+`;
 export const NavItem = styled(Link)`
   margin: 0 10px;
   color: var(--black-color);
@@ -74,6 +106,13 @@ export const NavItem = styled(Link)`
   }
 `;
 
+export const NavResponsiveItem = styled(NavItem)`
+  display: none;
+  @media (max-width: 1200px) {
+    display: block;
+  }
+`;
+
 export const NavLogoLink = styled(Link)`
   font-family: "Amira Beauty";
   font-size: 30px;
@@ -94,14 +133,12 @@ export const NavItemIcon = styled.a`
   margin: 0 12px;
   font-size: 18px;
   font-weight: bold;
-  color: var(--dark-gray-color);
+  color: ${(props) =>
+    props.darker ? "var(--dark-gray-color)" : "var(--gray-color)"};
   text-decoration: none;
   text-transform: uppercase;
   transition: 0.1s;
   cursor: pointer;
-  &:hover {
-    color: var(--black-color);
-  }
 `;
 
 export const NavDropdown = styled.div`
@@ -113,16 +150,16 @@ export const NavDropdown = styled.div`
 
 export const NavDropdownMenu = styled.div`
   position: absolute;
-  right: -60%;
+  right: -100%;
   display: none;
   width: 150px;
   border: 1px solid var(--gray-color);
   padding: 0;
-  margin-top: 5px;
-  /* transform: translateX(-30%); */
+  margin-top: 1px;
   background-color: #fff;
   z-index: 1000;
 `;
+
 export const NavDropdownItem = styled(Link)`
   font-size: 12px;
   font-weight: 500;
@@ -139,7 +176,7 @@ export const NavDropdownItem = styled(Link)`
 
 export const NavBtnToggleMenu = styled.button`
   display: block;
-  font-size: 20px;
+  font-size: 21px;
   color: var(--dark-gray-color);
   /* background-color: var(--white-color); */
   background: transparent;
