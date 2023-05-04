@@ -13,12 +13,46 @@ import {
   NavBtnToggleMenu,
   NavResponsiveItem,
 } from "./styles/Header.styled";
+import { Button, Divider, Input, Modal } from "./index";
+import GoogleLogo from "../assets/images/google-logo.png";
+import FacebookLogo from "../assets/images/facebook-logo.png";
 
 const Header = () => {
   const [showNavBar, setShowNavBar] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+  const openModalHandler = (e) => {
+    e.preventDefault();
+    setShowModal(true);
+  };
+  const closeModalHandler = (e) => {
+    e.preventDefault();
+    setShowModal(false);
+  };
 
   return (
     <>
+      <Modal show={showModal} title="Login" onClose={closeModalHandler}>
+        <form>
+          <label>Email</label>
+          <Input placeholder={"Enter email ..."} />
+          <label>Password</label>
+          <Input placeholder={"Enter password ..."} type="password" />
+          <Button block color="primary">
+            Login
+          </Button>
+          <Divider withOr />
+          <Button color="white" block>
+            <img src={GoogleLogo} className="ic-img" alt="ic-img" /> Login with
+            gmail
+          </Button>
+          <Button color="white" block>
+            <img src={FacebookLogo} className="ic-img" alt="ic-img" /> Login
+            with facebook
+          </Button>
+        </form>
+      </Modal>
+
       <NavBar bg="primary">
         <Nav>
           <NavLink to="/home">+212 06 10 20 30 40</NavLink>
@@ -38,18 +72,22 @@ const Header = () => {
       <NavBar>
         <NavLogoLink to="/">Afousse</NavLogoLink>
         <NavReponsive show={showNavBar}>
+          <NavResponsiveItem to="/">Search</NavResponsiveItem>
           <NavItem to="/home">Home</NavItem>
           <NavItem to="/shop">Shop</NavItem>
           <NavItem to="/shop/men">Men</NavItem>
           <NavItem to="/shop/men">Women</NavItem>
           <NavItem to="/shop/men">Contact</NavItem>
           <NavResponsiveItem to="/">Favorites</NavResponsiveItem>
+          <NavResponsiveItem to="/" onClick={openModalHandler}>
+            Login
+          </NavResponsiveItem>
         </NavReponsive>
         <Nav>
           <NavItemIcon darker to="/search">
             <i className="bi bi-search"></i>
           </NavItemIcon>
-          <NavItemIcon darker to="/login">
+          <NavItemIcon darker to="/login" onClick={openModalHandler}>
             <i className="bi bi-person"></i>
           </NavItemIcon>
           <NavItemIcon darker to="/cart">

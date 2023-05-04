@@ -6,7 +6,9 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Amira Beauty';
     src: url(${AmiraBeauty}) format('truetype');
 }
-
+*{
+  box-sizing:border-box;
+}
 body {
   font-family: 'Nunito Sans', sans-serif;
   letter-spacing: 1px;
@@ -56,6 +58,13 @@ h6 {
   font-weight: 400;
   
 }
+
+.ic-img{
+  width:20px;
+  height:20px;
+  margin:2px;
+}
+
 `;
 
 export default GlobalStyle;

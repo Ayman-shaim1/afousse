@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledDropdown = styled.div`
@@ -54,7 +55,7 @@ const StyledDropdownItem = styled.li`
   }
 `;
 
-const DropdownLink = styled.a`
+const DropdownLink = styled(Link)`
   font-size: 12px;
   font-weight: 500;
 `;

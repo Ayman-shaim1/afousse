@@ -15,7 +15,7 @@ const openNav = keyframes`
     top:0;
   }
   to {
-      top: 16%;
+      top: 10%;
   }
 `;
 
@@ -26,7 +26,7 @@ export const NavBar = styled.nav`
   justify-content: space-around;
   padding: 10px 0;
   width: 100%;
-  background-color: ${props =>
+  background-color: ${(props) =>
     props.bg ? "var(--" + props.bg + "-color)" : "var(--white-color)"};
 
   & > :nth-child(4) {
@@ -53,14 +53,15 @@ export const Nav = styled.div`
 
 export const NavReponsive = styled(Nav)`
   @media (max-width: 1200px) {
-    display: ${props => (props.show ? "flex" : "none")} !important;
+    display: ${(props) => (props.show ? "flex" : "none")} !important;
     background-color: var(--white-color);
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: absolute;
+    padding: 15px 0;
     animation: ${openNav} 0.3s linear;
-    top: 16%;
+    top: 10%;
     width: 100%;
     z-index: 1000;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 4px -1px,
@@ -68,6 +69,12 @@ export const NavReponsive = styled(Nav)`
     & > a {
       margin: 5px 0;
     }
+  }
+  @media (max-width: 700px) {
+    top: 12%;
+  }
+  @media (max-width: 400px) {
+    top: 14%;
   }
 `;
 export const NavLink = styled(Link)`
@@ -129,11 +136,11 @@ export const NavLogo = styled.img`
   border-radius: 50%;
 `;
 
-export const NavItemIcon = styled.a`
+export const NavItemIcon = styled(Link)`
   margin: 0 12px;
   font-size: 18px;
   font-weight: bold;
-  color: ${props =>
+  color: ${(props) =>
     props.darker ? "var(--dark-gray-color)" : "var(--gray-color)"};
   text-decoration: none;
   text-transform: uppercase;
@@ -157,7 +164,7 @@ export const NavDropdownMenu = styled.div`
   padding: 0;
   margin-top: 1px;
   background-color: #fff;
-  z-index: 1000;
+  z-index: 2000;
 `;
 
 export const NavDropdownItem = styled(Link)`
@@ -183,6 +190,7 @@ export const NavBtnToggleMenu = styled.button`
   border-radius: 50%;
   width: 50px;
   height: 50px;
+  z-index: 1500;
 
   border: none;
   cursor: pointer;

@@ -5,24 +5,33 @@ export const Button = styled.button`
   border: none;
   outline: none;
   font-family: "Nunito Sans", sans-serif;
-  background-color: ${props =>
+  background-color: ${(props) =>
     props.color ? `var(--${props.color}-color)` : `var(--primary-color)`};
-  color: ${props =>
+  color: ${(props) =>
     props.color === "white" ? `var(--black-color)` : `var(--white-color)`};
   padding: 16px 20px;
-  display: inline-block;
+  width: ${(props) => props.block && "100%"};
+  display: block;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: ${(props) =>
+    props.color === "white" ? `1px solid var(--light-gray-color)` : `none`}; */
+  margin: 5px 0;
   &:hover {
-    opacity: 0.9;
+    opacity: ${(props) => (props.color === "white" ? "1" : `0.8`)};
+    background-color: ${(props) =>
+      props.color === "white" && `var(--light-gray-color)`};
   }
 `;
 
 export const ButtonLink = styled(Link)`
   border: none;
   outline: none;
-  background-color: ${props =>
+  background-color: ${(props) =>
     props.color ? `var(--${props.color}-color)` : `var(--primary-color)`};
-  color: ${props =>
+  color: ${(props) =>
     props.color === "white" ? `var(--black-color)` : `var(--white-color)`};
   padding: 16px 20px;
   display: inline-block;
