@@ -60,8 +60,8 @@ h6 {
 }
 
 .ic-img{
-  width:20px;
-  height:20px;
+  width:18px;
+  height:18px;
   margin:2px;
 }
 

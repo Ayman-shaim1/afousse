@@ -1,11 +1,11 @@
 import styled, { keyframes } from "styled-components";
 
 const openModal = keyframes`
-  from{
+  from {
     top:0;
   }
-  to{
-  top:50%
+  to {
+    top:50%
   }
 `;
 
@@ -20,7 +20,7 @@ export const Modal = styled.div`
   transform: translate(-50%, -50%);
   border: 1px solid var(--gray-color);
   z-index: 5000;
-  animation: ${openModal} 0.3s linear;
+  animation: ${openModal} 0.4s linear;
   @media (max-width: 700px) {
     width: 400px;
   }

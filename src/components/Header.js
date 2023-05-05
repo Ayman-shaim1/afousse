@@ -20,6 +20,8 @@ import FacebookLogo from "../assets/images/facebook-logo.png";
 const Header = () => {
   const [showNavBar, setShowNavBar] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPasswrod] = useState("");
 
   const openModalHandler = (e) => {
     e.preventDefault();
@@ -28,6 +30,8 @@ const Header = () => {
   const closeModalHandler = (e) => {
     e.preventDefault();
     setShowModal(false);
+    setEmail("");
+    setPasswrod("");
   };
 
   return (
@@ -35,9 +39,19 @@ const Header = () => {
       <Modal show={showModal} title="Login" onClose={closeModalHandler}>
         <form>
           <label>Email</label>
-          <Input placeholder={"Enter email ..."} />
+          <Input
+            placeholder={"Enter email ..."}
+            value={email}
+            type="email"
+            onChange={(e) => setEmail(e.target.value)}
+          />
           <label>Password</label>
-          <Input placeholder={"Enter password ..."} type="password" />
+          <Input
+            placeholder={"Enter password ..."}
+            type="password"
+            value={password}
+            onChange={(e) => setPasswrod(e.target.value)}
+          />
           <Button block color="primary">
             Login
           </Button>
