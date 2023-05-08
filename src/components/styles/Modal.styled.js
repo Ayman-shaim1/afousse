@@ -11,7 +11,7 @@ const openModal = keyframes`
 
 export const Modal = styled.div`
   width: 550px;
-  min-height: 500px;
+  height: 520px;
   overflow-y: auto;
 
   background-color: var(--white-color);
