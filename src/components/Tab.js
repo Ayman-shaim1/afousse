@@ -1,21 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { Tab as SCTab, TabTitle, TabContent } from "./styles/Tabs.styled";
-import { v4 as uuidv4 } from "uuid";
 
-const Tab = ({ children, title }) => {
-  const id = uuidv4();
-  const [activeTab, setActiveTab] = useState(true);
-
-  const activeTabHandler = () => {};
-
+const Tab = ({ children, title, active, onClick }) => {
   return (
-    <SCTab id={`tab-${id}`}>
-      <TabTitle onClick={activeTabHandler} id={`tab-title-${id}`}>
-        {title}
-      </TabTitle>
-      <TabContent active={activeTab} id={`tab-content-${id}`}>
-        {children}
-      </TabContent>
+    <SCTab>
+      <TabTitle onClick={onClick} active={active}>{title}</TabTitle>
+      <TabContent active={active}>{children}</TabContent>
     </SCTab>
   );
 };

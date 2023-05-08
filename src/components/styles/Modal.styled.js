@@ -11,7 +11,9 @@ const openModal = keyframes`
 
 export const Modal = styled.div`
   width: 550px;
-  min-height: 400px;
+  min-height: 500px;
+  overflow-y: auto;
+
   background-color: var(--white-color);
   display: ${(props) => (props.show ? "block" : "none")};
   position: absolute;
@@ -21,6 +23,7 @@ export const Modal = styled.div`
   border: 1px solid var(--gray-color);
   z-index: 5000;
   animation: ${openModal} 0.4s linear;
+
   @media (max-width: 700px) {
     width: 400px;
   }
@@ -32,7 +35,6 @@ export const ModalHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* border-bottom: 1px solid var(--gray-color); */
   padding: 5px 20px;
 `;
 export const ModalTitle = styled.h4``;
