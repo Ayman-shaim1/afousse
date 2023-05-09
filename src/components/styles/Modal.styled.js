@@ -11,9 +11,8 @@ const openModal = keyframes`
 
 export const Modal = styled.div`
   width: 550px;
-  height: 520px;
-  overflow-y: auto;
-
+  height: 540px;
+  overflow-y: hidden;
   background-color: var(--white-color);
   display: ${(props) => (props.show ? "block" : "none")};
   position: absolute;
@@ -28,14 +27,14 @@ export const Modal = styled.div`
     width: 400px;
   }
   @media (max-width: 450px) {
-    width: 280px;
+    width: 350px;
   }
 `;
 export const ModalHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 20px;
+  padding: 7px 20px 0 20px;
 `;
 export const ModalTitle = styled.h4``;
 export const ModalCloseButton = styled.span`
@@ -53,7 +52,9 @@ export const ModalCloseButton = styled.span`
   }
 `;
 export const ModalContainer = styled.div`
-  padding: 7px 20px;
+  padding: 0px 30px;
+  height: 100%;
+  overflow-y: hidden;
 `;
 
 export const ModalOverlay = styled.div`

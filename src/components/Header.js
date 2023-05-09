@@ -13,15 +13,13 @@ import {
   NavBtnToggleMenu,
   NavResponsiveItem,
 } from "./styles/Header.styled";
-import { Button, Divider, Input, Modal, Tab, Tabs } from "./index";
-import GoogleLogo from "../assets/images/google-logo.png";
-import FacebookLogo from "../assets/images/facebook-logo.png";
+import { Modal, Tab, Tabs } from "./index";
+import Login from "./Login";
+import Register from "./Register";
 
 const Header = () => {
   const [showNavBar, setShowNavBar] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPasswrod] = useState("");
 
   const openModalHandler = (e) => {
     e.preventDefault();
@@ -30,8 +28,6 @@ const Header = () => {
   const closeModalHandler = (e) => {
     e.preventDefault();
     setShowModal(false);
-    setEmail("");
-    setPasswrod("");
   };
 
   return (
@@ -39,64 +35,10 @@ const Header = () => {
       <Modal show={showModal} onClose={closeModalHandler}>
         <Tabs>
           <Tab title="Login">
-            <form>
-              <label>Email</label>
-              <Input
-                placeholder={"Enter email ..."}
-                value={email}
-                type="email"
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <label>Password</label>
-              <Input
-                placeholder={"Enter password ..."}
-                type="password"
-                value={password}
-                onChange={(e) => setPasswrod(e.target.value)}
-              />
-              <Button block color="primary">
-                Login
-              </Button>
-              <Divider withOr />
-              <Button color="white" block>
-                <img src={GoogleLogo} className="ic-img" alt="ic-img" /> Login
-                with gmail
-              </Button>
-              <Button color="white" block>
-                <img src={FacebookLogo} className="ic-img" alt="ic-img" /> Login
-                with facebook
-              </Button>
-            </form>
+            <Login />
           </Tab>
           <Tab title="Register">
-            <form>
-              <label>Email</label>
-              <Input
-                placeholder={"Enter email ..."}
-                value={email}
-                type="email"
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <label>Password</label>
-              <Input
-                placeholder={"Enter password ..."}
-                type="password"
-                value={password}
-                onChange={(e) => setPasswrod(e.target.value)}
-              />
-              <Button block color="primary">
-                Login
-              </Button>
-              <Divider withOr />
-              <Button color="white" block>
-                <img src={GoogleLogo} className="ic-img" alt="ic-img" /> Login
-                with gmail
-              </Button>
-              <Button color="white" block>
-                <img src={FacebookLogo} className="ic-img" alt="ic-img" /> Login
-                with facebook
-              </Button>
-            </form>
+            <Register />
           </Tab>
         </Tabs>
       </Modal>
@@ -164,6 +106,7 @@ const Header = () => {
           </NavBtnToggleMenu>
         </Nav>
       </NavBar>
+      
     </>
   );
 };
