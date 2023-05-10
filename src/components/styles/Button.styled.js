@@ -18,7 +18,7 @@ export const Button = styled.button`
   align-items: center;
   /* border: ${(props) =>
     props.color === "white" ? `1px solid var(--light-gray-color)` : `none`}; */
-  margin: 5px 0;
+  margin: 7px 0;
   &:hover {
     opacity: ${(props) => (props.color === "white" ? "1" : `0.8`)};
     background-color: ${(props) =>

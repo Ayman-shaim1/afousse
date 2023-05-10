@@ -21,18 +21,14 @@ const Header = () => {
   const [showNavBar, setShowNavBar] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
-  const openModalHandler = (e) => {
-    e.preventDefault();
+  const openModalHandler = (event) => {
+    event.preventDefault();
     setShowModal(true);
-  };
-  const closeModalHandler = (e) => {
-    e.preventDefault();
-    setShowModal(false);
   };
 
   return (
     <>
-      <Modal show={showModal} onClose={closeModalHandler}>
+      <Modal show={showModal} onClose={() => setShowModal(false)}>
         <Tabs>
           <Tab title="Login">
             <Login />
@@ -43,7 +39,7 @@ const Header = () => {
         </Tabs>
       </Modal>
 
-      <NavBar bg="primary">
+      <NavBar bg="black">
         <Nav>
           <NavLink to="/home">+212 06 10 20 30 40</NavLink>
         </Nav>
@@ -106,7 +102,6 @@ const Header = () => {
           </NavBtnToggleMenu>
         </Nav>
       </NavBar>
-      
     </>
   );
 };

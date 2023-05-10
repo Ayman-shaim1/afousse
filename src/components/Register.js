@@ -13,33 +13,33 @@ const Register = () => {
     <form>
       <label>Name</label>
       <Input
-        placeholder={"Enter name ..."}
+        placeholder={"Enter name"}
         value={name}
         type="text"
         onChange={(e) => setName(e.target.value)}
       />
       <label>Email</label>
       <Input
-        placeholder={"Enter email ..."}
+        placeholder={"Enter email"}
         value={email}
         type="email"
         onChange={(e) => setEmail(e.target.value)}
       />
       <label>Password</label>
       <Input
-        placeholder={"Enter password ..."}
+        placeholder={"Enter password"}
         type="password"
         value={password}
         onChange={(e) => setPasswrod(e.target.value)}
       />
       <label>Confrim password</label>
       <Input
-        placeholder={"Enter confirm password ..."}
+        placeholder={"Enter confirm password"}
         type="password"
         value={confirmPassword}
         onChange={(e) => setConfirmPasswrod(e.target.value)}
       />
-      <Button block color="primary">
+      <Button block color="black">
         Register
       </Button>
     </form>

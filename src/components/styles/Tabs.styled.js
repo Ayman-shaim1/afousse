@@ -15,7 +15,7 @@ export const TabTitle = styled.h5`
   cursor: pointer;
   border-bottom: ${(props) =>
     props.active
-      ? "2px solid var(--primary-color)"
+      ? "2px solid var(--black-color)"
       : "1px solid var(--gray-color)"};
 
   &:hover {
