@@ -58,7 +58,6 @@ const Header = () => {
       <NavBar>
         <NavLogoLink to="/">Afousse</NavLogoLink>
         <NavReponsive show={showNavBar}>
-          <NavResponsiveItem to="/">Search</NavResponsiveItem>
           <NavItem to="/home">Home</NavItem>
           <NavItem to="/shop">Shop</NavItem>
           <NavItem to="/shop/men">Men</NavItem>
@@ -70,7 +69,7 @@ const Header = () => {
           </NavResponsiveItem>
         </NavReponsive>
         <Nav>
-          <NavItemIcon darker to="/search">
+          <NavItemIcon darker={"true"} to="/search">
             <i className="bi bi-search"></i>
           </NavItemIcon>
           <NavItemIcon darker to="/login" onClick={openModalHandler}>
@@ -85,6 +84,9 @@ const Header = () => {
         </Nav>
 
         <Nav>
+          <NavItemIcon darker to="/search">
+            <i className="bi bi-search"></i>
+          </NavItemIcon>
           <NavItemIcon darker to="/cart">
             <i className="bi bi-bag"></i>
           </NavItemIcon>

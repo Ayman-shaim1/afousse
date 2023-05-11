@@ -104,7 +104,7 @@ export const NavItem = styled(Link)`
   }
 
   &:hover {
-    color: var(--secondary-color);
+    color: var(--gray-color);
   }
 
   &:hover::after {

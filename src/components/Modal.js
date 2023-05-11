@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from "react";
+// import React, { useCallback, useEffect, useRef } from "react";
 import {
   Modal as SCModal,
   ModalCloseButton,
@@ -9,32 +9,32 @@ import {
 } from "./styles/Modal.styled";
 
 const Modal = ({ title, children, show, onClose }) => {
-  const modalRef = useRef(null);
-  
-  const handleOutsideClick = useCallback(
-    (event) => {
-      if (modalRef.current && !modalRef.current.contains(event.target)) {
-        onClose();
-      }
-    },
-    [onClose]
-  );
+  // const modalRef = useRef(null);
 
-  useEffect(() => {
-    console.log(show);
-    if (show) {
-      document.addEventListener("click", handleOutsideClick);
-    }
+  // const handleOutsideClick = useCallback(
+  //   (event) => {
+  //     if (modalRef.current && !modalRef.current.contains(event.target)) {
+  //       onClose();
+  //     }
+  //   },
+  //   [onClose]
+  // );
 
-    return () => {
-      document.removeEventListener("click", handleOutsideClick);
-    };
-  }, [show, handleOutsideClick]);
+  // useEffect(() => {
+  //   if (show) {
+  //     document.addEventListener("click", handleOutsideClick);
+  //   }
+
+  //   return () => {
+  //     document.removeEventListener("click", handleOutsideClick);
+  //   };
+  // }, [show, handleOutsideClick]);
 
   return (
     <>
       <ModalOverlay show={show} />
-      <SCModal show={show} ref={modalRef}>
+      {/* <SCModal show={show} ref={modalRef}> */}
+      <SCModal show={show}>
         <ModalHeader>
           <ModalTitle>{title}</ModalTitle>
           <ModalCloseButton onClick={onClose}>

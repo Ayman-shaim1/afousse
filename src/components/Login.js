@@ -25,11 +25,11 @@ const Login = () => {
         value={password}
         onChange={(e) => setPasswrod(e.target.value)}
       />
-      <Button block color="black">
+      <Button block color="black" style={{ marginBottom: "22px" }}>
         Login
       </Button>
       <Divider withOr />
-      <Button color="white" block style={{ marginBottom: "12px" }}>
+      <Button color="white" block style={{ margin: "12px 0" }}>
         <img src={GoogleLogo} className="ic-img" alt="ic-img" /> Login with
         gmail
       </Button>
