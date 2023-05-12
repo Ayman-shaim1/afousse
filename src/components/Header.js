@@ -13,32 +13,12 @@ import {
   NavBtnToggleMenu,
   NavResponsiveItem,
 } from "./styles/Header.styled";
-import { Modal, Tab, Tabs } from "./index";
-import Login from "./Login";
-import Register from "./Register";
 
 const Header = () => {
   const [showNavBar, setShowNavBar] = useState(false);
-  const [showModal, setShowModal] = useState(false);
-
-  const openModalHandler = (event) => {
-    event.preventDefault();
-    setShowModal(true);
-  };
 
   return (
     <>
-      <Modal show={showModal} onClose={() => setShowModal(false)}>
-        <Tabs>
-          <Tab title="Login">
-            <Login />
-          </Tab>
-          <Tab title="Register">
-            <Register />
-          </Tab>
-        </Tabs>
-      </Modal>
-
       <NavBar bg="black">
         <Nav>
           <NavLink to="/home">+212 06 10 20 30 40</NavLink>
@@ -64,15 +44,13 @@ const Header = () => {
           <NavItem to="/shop/men">Women</NavItem>
           <NavItem to="/shop/men">Contact</NavItem>
           <NavResponsiveItem to="/">Favorites</NavResponsiveItem>
-          <NavResponsiveItem to="/" onClick={openModalHandler}>
-            Login
-          </NavResponsiveItem>
+          <NavResponsiveItem to="/Login">Login</NavResponsiveItem>
         </NavReponsive>
         <Nav>
           <NavItemIcon darker={"true"} to="/search">
             <i className="bi bi-search"></i>
           </NavItemIcon>
-          <NavItemIcon darker to="/login" onClick={openModalHandler}>
+          <NavItemIcon darker to="/login">
             <i className="bi bi-person"></i>
           </NavItemIcon>
           <NavItemIcon darker to="/cart">

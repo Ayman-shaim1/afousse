@@ -2,9 +2,10 @@ import styled from "styled-components";
 
 export const Tabs = styled.div`
   display: flex;
+  position: relative;
   justify-content: center;
   width: 100%;
-  position: relative;
+  height: 100%;
 `;
 export const Tab = styled.div`
   width: 100%;
@@ -12,6 +13,7 @@ export const Tab = styled.div`
 export const TabTitle = styled.h5`
   padding: 15px 18px;
   text-align: center;
+
   cursor: pointer;
   border-bottom: ${(props) =>
     props.active
@@ -26,6 +28,7 @@ export const TabTitle = styled.h5`
 export const TabContent = styled.div`
   position: absolute;
   width: 100%;
+  height: 100%;
   left: 0;
   display: ${(props) => (props.active ? "block" : "none")};
   z-index: 100;

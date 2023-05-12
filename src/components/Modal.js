@@ -9,26 +9,7 @@ import {
 } from "./styles/Modal.styled";
 
 const Modal = ({ title, children, show, onClose }) => {
-  // const modalRef = useRef(null);
-
-  // const handleOutsideClick = useCallback(
-  //   (event) => {
-  //     if (modalRef.current && !modalRef.current.contains(event.target)) {
-  //       onClose();
-  //     }
-  //   },
-  //   [onClose]
-  // );
-
-  // useEffect(() => {
-  //   if (show) {
-  //     document.addEventListener("click", handleOutsideClick);
-  //   }
-
-  //   return () => {
-  //     document.removeEventListener("click", handleOutsideClick);
-  //   };
-  // }, [show, handleOutsideClick]);
+ 
 
   return (
     <>

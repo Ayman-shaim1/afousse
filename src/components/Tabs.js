@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Tabs as SCTabs } from "./styles/Tabs.styled";
 
-
 const Tabs = ({ children }) => {
   const [activeChild, setActiveChild] = useState(null);
+
   const handleClick = (child) => {
     setActiveChild(child);
   };

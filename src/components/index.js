@@ -8,4 +8,10 @@ export { default as Button } from "./Button";
 export { default as Divider } from "./Divider";
 export { default as Tabs } from "./Tabs";
 export { default as Tab } from "./Tab";
+export { default as Padding } from "./Padding";
+export { default as Row } from "./Row";
+export { default as Column } from "./Column";
+
+
+
 
