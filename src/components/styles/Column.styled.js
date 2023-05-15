@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Column = styled.div`
-  float: left;
   width: 33.33%;
   padding: 5px 15px;
 
@@ -143,4 +142,5 @@ export const Column = styled.div`
         ? "91.66%"
         : "100%"};
   }
+  
 `;

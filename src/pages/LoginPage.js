@@ -1,18 +1,27 @@
 import React from "react";
-import { Center, Column, Row, Tab, Tabs } from "../components";
+import { Column, Margin, Row, Tab, Tabs } from "../components";
 import Login from "../components/Login";
 import Register from "../components/Register";
 
 const LoginPage = () => {
   return (
     <>
-      <Center horizontal>
+      <Margin top={"60"}>
         <Row>
-          <Column xs={12} sm={12} md={6} lg={6} xl={6}>
-            <Login />
+          <Column xs={12} sm={12} md={1} lg={2} xl={3}></Column>
+          <Column xs={12} sm={12} md={10} lg={6} xl={6}>
+            <Tabs>
+              <Tab title={"Login"}>
+                <Login />
+              </Tab>
+              <Tab title={"Register"}>
+                <Register />
+              </Tab>
+            </Tabs>
           </Column>
+          <Column xs={12} sm={12} md={1} lg={2} xl={3}></Column>
         </Row>
-      </Center>
+      </Margin>
     </>
   );
 };

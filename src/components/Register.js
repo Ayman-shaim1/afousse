@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Input from "./Input";
-
 import Button from "./Button";
+import Margin from "./Margin";
+import { CheckBox } from "./styles/CheckBox.styled";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -39,6 +40,9 @@ const Register = () => {
         value={confirmPassword}
         onChange={(e) => setConfirmPasswrod(e.target.value)}
       />
+      <Margin bottom={"20"} top={"20"}>
+        <CheckBox label={"show passwords ?"} />
+      </Margin>
       <Button block color="black">
         Register
       </Button>

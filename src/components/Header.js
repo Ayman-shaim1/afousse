@@ -17,6 +17,10 @@ import {
 const Header = () => {
   const [showNavBar, setShowNavBar] = useState(false);
 
+  const closeNavbarHandler = () => {
+    setShowNavBar(false);
+  };
+
   return (
     <>
       <NavBar bg="black">
@@ -38,13 +42,27 @@ const Header = () => {
       <NavBar>
         <NavLogoLink to="/">Afousse</NavLogoLink>
         <NavReponsive show={showNavBar}>
-          <NavItem to="/home">Home</NavItem>
-          <NavItem to="/shop">Shop</NavItem>
-          <NavItem to="/shop/men">Men</NavItem>
-          <NavItem to="/shop/men">Women</NavItem>
-          <NavItem to="/shop/men">Contact</NavItem>
-          <NavResponsiveItem to="/">Favorites</NavResponsiveItem>
-          <NavResponsiveItem to="/Login">Login</NavResponsiveItem>
+          <NavItem to="/home" onClick={closeNavbarHandler}>
+            Home
+          </NavItem>
+          <NavItem to="/shop" onClick={closeNavbarHandler}>
+            Shop
+          </NavItem>
+          <NavItem to="/shop/men" onClick={closeNavbarHandler}>
+            Men
+          </NavItem>
+          <NavItem to="/shop/men" onClick={closeNavbarHandler}>
+            Women
+          </NavItem>
+          <NavItem to="/shop/men" onClick={closeNavbarHandler}>
+            Contact
+          </NavItem>
+          <NavResponsiveItem to="/" onClick={closeNavbarHandler}>
+            Favorites
+          </NavResponsiveItem>
+          <NavResponsiveItem to="/Login" onClick={closeNavbarHandler}>
+            Login
+          </NavResponsiveItem>
         </NavReponsive>
         <Nav>
           <NavItemIcon darker={"true"} to="/search">
