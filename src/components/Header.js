@@ -57,6 +57,9 @@ const Header = () => {
           <NavItem to="/shop/men" onClick={closeNavbarHandler}>
             Contact
           </NavItem>
+          <NavItem to="/shop/men" onClick={closeNavbarHandler}>
+            About
+          </NavItem>
           <NavResponsiveItem to="/" onClick={closeNavbarHandler}>
             Favorites
           </NavResponsiveItem>

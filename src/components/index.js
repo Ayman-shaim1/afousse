@@ -10,7 +10,7 @@ export { default as Tabs } from "./Tabs";
 export { default as Tab } from "./Tab";
 export { default as Padding } from "./Padding";
 export { default as Margin } from "./Margin";
-
 export { default as Row } from "./Row";
-
 export { default as Column } from "./Column";
+export { default as Alert } from "./Alert";
+

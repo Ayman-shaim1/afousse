@@ -7,8 +7,19 @@
   --light-gray-color: #f4f4f4;
   --gray-color: #d0d0d0;
   --dark-gray-color: #808080;
+  /* red color : */
+  --light-red-color: #ff7b76;
   --red-color: #d9534f;
+  --dark-red-color: #b5403e;
+  --very-dark-red-color: #932e2a;
+
+  /* green color : */
   --green-color: #4bbf73;
+  --light-green-color: #7cdf9e;
+  --dark-green-color: #318d58;
+  --very-dark-green-color: #1e573b;
+  /* yellow color : */
   --yellow-color: #f0ad4e;
+  /* info color : */
   --info-color: #1f9bcf;
 }

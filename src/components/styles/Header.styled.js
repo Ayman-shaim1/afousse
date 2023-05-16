@@ -81,7 +81,6 @@ export const NavLink = styled(Link)`
   color: var(--white-color);
   text-decoration: none;
   text-transform: uppercase;
-  text-align: center;
   transition: 0.1s;
 `;
 export const NavItem = styled(Link)`
@@ -92,8 +91,8 @@ export const NavItem = styled(Link)`
   text-align: center;
   font-weight: bold;
   transition: 0.1s;
-
   cursor: pointer;
+
   &::after {
     content: "";
     display: block;
@@ -104,7 +103,7 @@ export const NavItem = styled(Link)`
   }
 
   &:hover {
-    color: var(--gray-color);
+    color: var(--dark-gray-color);
   }
 
   &:hover::after {
