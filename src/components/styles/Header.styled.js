@@ -172,6 +172,7 @@ export const NavDropdownItem = styled(Link)`
   padding: 15px;
   border-bottom: 1px solid var(--gray-color);
   display: block;
+  text-decoration: none;
   &:hover {
     background-color: var(--light-gray-color);
   }

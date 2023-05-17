@@ -15,7 +15,7 @@ body {
 }
 a{
   color:var(--black-color);
-  text-decoration:none;
+ 
 
 }
 .title {

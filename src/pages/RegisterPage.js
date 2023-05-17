@@ -1,22 +1,14 @@
 import React, { useState } from "react";
-import {
-  Button,
-  Center,
-  Column,
-  Divider,
-  Input,
-  Margin,
-  Row,
-} from "../components";
-
-import { Link } from "react-router-dom";
+import { Button, Center, Column, Input, Margin, Row } from "../components";
 import { CheckBox } from "../components/styles/CheckBox.styled";
-import GoogleLogo from "../assets/images/google-logo.png";
-import FacebookLogo from "../assets/images/facebook-logo.png";
+import { Link } from "react-router-dom";
 
-const LoginPage = () => {
+const RegisterPage = () => {
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
   const [password, setPasswrod] = useState("");
+  const [confirmPassword, setConfirmPasswrod] = useState("");
+
   return (
     <>
       <Margin top={"60"}>
@@ -24,6 +16,13 @@ const LoginPage = () => {
           <Column xs={12} sm={12} md={1} lg={2} xl={3}></Column>
           <Column xs={12} sm={12} md={10} lg={6} xl={6}>
             <form>
+              <label>Name</label>
+              <Input
+                placeholder={"Enter name"}
+                value={name}
+                type="text"
+                onChange={(e) => setName(e.target.value)}
+              />
               <label>Email</label>
               <Input
                 placeholder={"Enter email"}
@@ -38,37 +37,27 @@ const LoginPage = () => {
                 value={password}
                 onChange={(e) => setPasswrod(e.target.value)}
               />
-
+              <label>Confrim password</label>
+              <Input
+                placeholder={"Enter confirm password"}
+                type="password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPasswrod(e.target.value)}
+              />
               <Margin bottom={"20"} top={"20"}>
-                <CheckBox label={"show password ?"} />
+                <CheckBox label={"show passwords ?"} />
               </Margin>
-
-              <Button block color="black" style={{ marginBottom: "22px" }}>
-                Login
+              <Button block color="black">
+                Register
               </Button>
             </form>
-            <Margin top={"20"} bottom={"30"}>
-              <Center horizontal>
-                <Link to="/forgot-password">Forgot password ?</Link>
-              </Center>
-            </Margin>
-
-            <Divider withOr />
-            <Button color="white" block style={{ margin: "12px 0" }}>
-              <img src={GoogleLogo} className="ic-img" alt="ic-img" /> Login
-              with gmail
-            </Button>
-            <Button color="white" block>
-              <img src={FacebookLogo} className="ic-img" alt="ic-img" /> Login
-              with facebook
-            </Button>
 
             <Margin top={"20"} bottom={"30"}>
               <Center horizontal>
                 <p>
-                  New customer{" "}
-                  <Link Link to="/register">
-                    Register
+                  Already have an account{" "}
+                  <Link Link to="/login">
+                    Login
                   </Link>
                   ?
                 </p>
@@ -82,4 +71,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default RegisterPage;

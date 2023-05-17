@@ -13,16 +13,28 @@ import {
   NavBtnToggleMenu,
   NavResponsiveItem,
 } from "./styles/Header.styled";
+import Search from "./Search";
 
 const Header = () => {
   const [showNavBar, setShowNavBar] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
 
   const closeNavbarHandler = () => {
     setShowNavBar(false);
   };
 
+  const closeSearchHandler = () => {
+    setShowSearch(false);
+  };
+
+  const openSearchHandler = (e) => {
+    e.preventDefault();
+    setShowSearch(true);
+  };
+
   return (
     <>
+      <Search show={showSearch} onClose={closeSearchHandler} />
       <NavBar bg="black">
         <Nav>
           <NavLink to="/home">+212 06 10 20 30 40</NavLink>
@@ -68,7 +80,7 @@ const Header = () => {
           </NavResponsiveItem>
         </NavReponsive>
         <Nav>
-          <NavItemIcon darker={"true"} to="/search">
+          <NavItemIcon darker={"true"} onClick={openSearchHandler}>
             <i className="bi bi-search"></i>
           </NavItemIcon>
           <NavItemIcon darker to="/login">
