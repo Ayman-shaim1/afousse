@@ -24,16 +24,36 @@ export const SearchContainer = styled.div`
   bottom: 0;
   background-color: white;
   z-index: 5000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
   display: ${(props) => (props.show ? "block" : "none")};
 `;
 
 export const SearchInputContainer = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
+
+export const SearchContent = styled.div`
   position: relative;
-  display:block;
-  width: 800px;
+  display: block;
+  width:250px;
+  @media (min-width: 576px) {
+    width: 540px;
+  }
+  @media (min-width: 768px) {
+    width: 720px;
+  }
+  @media (min-width: 992px) {
+    width: 860px;
+  }
+  @media (min-width: 1200px) {
+    width: 940px;
+  }
+  @media (min-width: 1400px) {
+    width: 940px;
+  }
 `;
 
 export const SearchInput = styled.input`
@@ -43,6 +63,7 @@ export const SearchInput = styled.input`
   outline: none;
   padding: 18px 30px 18px 5px;
   font-size: 18px;
+  width:100%;
 `;
 
 export const SearchInputIcon = styled.span`

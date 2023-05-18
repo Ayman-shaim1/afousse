@@ -1,0 +1,11 @@
+{
+  "message": "Bonjour le monde",
+  "navbar": {
+    "home": "accueil",
+    "shop": "boutique",
+    "men": "hommes",
+    "women": "femmes",
+    "contact": "contact",
+    "about": "à propos"
+  }
+}

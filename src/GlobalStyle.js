@@ -6,18 +6,20 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Amira Beauty';
     src: url(${AmiraBeauty}) format('truetype');
 }
+
 *{
   box-sizing:border-box;
 }
+
 body {
   font-family: 'Nunito Sans', sans-serif;
-  letter-spacing: 1px;
+  letter-spacing: 0;
 }
+
 a{
   color:var(--black-color);
- 
-
 }
+
 .title {
   font-family:'Amira Beauty';
   margin: 0 auto 80px;

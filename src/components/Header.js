@@ -14,10 +14,12 @@ import {
   NavResponsiveItem,
 } from "./styles/Header.styled";
 import Search from "./Search";
-
+import { useTranslation } from "react-i18next";
 const Header = () => {
   const [showNavBar, setShowNavBar] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
+  const { i18n, t } = useTranslation();
+  const currentLanguage = i18n.language;
 
   const closeNavbarHandler = () => {
     setShowNavBar(false);
@@ -32,10 +34,15 @@ const Header = () => {
     setShowSearch(true);
   };
 
+  const selectLanguageHandler = (e) => {
+    e.preventDefault();
+    i18n.changeLanguage(e.target.getAttribute("href").split("/")[1]);
+  };
+
   return (
     <>
       <Search show={showSearch} onClose={closeSearchHandler} />
-      <NavBar bg="black">
+      <NavBar bg="black" currentLanguage={currentLanguage}>
         <Nav>
           <NavLink to="/home">+212 06 10 20 30 40</NavLink>
         </Nav>
@@ -44,33 +51,40 @@ const Header = () => {
             <NavItemIcon to="/languages">
               <i className="bi bi-globe"></i>
               <NavDropdownMenu>
-                <NavDropdownItem to="/english">English</NavDropdownItem>
-                <NavDropdownItem to="/arabe">Arabe</NavDropdownItem>
+                <NavDropdownItem onClick={selectLanguageHandler} to="/en">
+                  English
+                </NavDropdownItem>
+                <NavDropdownItem onClick={selectLanguageHandler} to="/fr">
+                  French
+                </NavDropdownItem>
+                <NavDropdownItem onClick={selectLanguageHandler} to="/ar">
+                  Arabe
+                </NavDropdownItem>
               </NavDropdownMenu>
             </NavItemIcon>
           </NavDropdown>
         </Nav>
       </NavBar>
-      <NavBar>
+      <NavBar currentLanguage={currentLanguage}>
         <NavLogoLink to="/">Afousse</NavLogoLink>
-        <NavReponsive show={showNavBar}>
+        <NavReponsive show={showNavBar} currentLanguage={currentLanguage}>
           <NavItem to="/home" onClick={closeNavbarHandler}>
-            Home
+            {t("navbar.home")}
           </NavItem>
           <NavItem to="/shop" onClick={closeNavbarHandler}>
-            Shop
+            {t("navbar.shop")}
           </NavItem>
           <NavItem to="/shop/men" onClick={closeNavbarHandler}>
-            Men
+            {t("navbar.men")}
           </NavItem>
           <NavItem to="/shop/men" onClick={closeNavbarHandler}>
-            Women
+            {t("navbar.women")}
           </NavItem>
           <NavItem to="/shop/men" onClick={closeNavbarHandler}>
-            Contact
+            {t("navbar.contact")}
           </NavItem>
           <NavItem to="/shop/men" onClick={closeNavbarHandler}>
-            About
+            {t("navbar.about")}
           </NavItem>
           <NavResponsiveItem to="/" onClick={closeNavbarHandler}>
             Favorites
@@ -79,7 +93,7 @@ const Header = () => {
             Login
           </NavResponsiveItem>
         </NavReponsive>
-        <Nav>
+        <Nav currentLanguage={currentLanguage}>
           <NavItemIcon darker={"true"} onClick={openSearchHandler}>
             <i className="bi bi-search"></i>
           </NavItemIcon>
@@ -94,8 +108,8 @@ const Header = () => {
           </NavItemIcon>
         </Nav>
 
-        <Nav>
-          <NavItemIcon darker to="/search">
+        <Nav currentLanguage={currentLanguage}>
+          <NavItemIcon darker to="/search" onClick={openSearchHandler}>
             <i className="bi bi-search"></i>
           </NavItemIcon>
           <NavItemIcon darker to="/cart">

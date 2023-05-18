@@ -22,10 +22,14 @@ const openNav = keyframes`
 export const NavBar = styled.nav`
   background: transparent;
   display: flex;
+  flex-direction: ${(props) =>
+    props.currentLanguage === "ar" ? "row-reverse" : "row"};
+
   align-content: center;
   justify-content: space-around;
   padding: 10px 0;
   width: 100%;
+
   background-color: ${(props) =>
     props.bg ? "var(--" + props.bg + "-color)" : "var(--white-color)"};
 
@@ -35,7 +39,8 @@ export const NavBar = styled.nav`
 
   @media (max-width: 1200px) {
     & > :nth-child(3) {
-      flex-direction: column;
+      flex-direction: ${(props) =>
+        props.currentLanguage === "ar" ? "column-reverse" : "column"};
       display: none;
     }
     & > :nth-child(4) {
@@ -49,15 +54,16 @@ export const Nav = styled.div`
   justify-content: center;
   align-items: center;
   transition: 0.4s;
+  flex-direction: ${(props) =>
+    props.currentLanguage === "ar" ? "row-reverse" : "row"};
 `;
 
 export const NavReponsive = styled(Nav)`
   @media (max-width: 1200px) {
     display: ${(props) => (props.show ? "flex" : "none")} !important;
     background-color: var(--white-color);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-direction: ${(props) =>
+      props.currentLanguage === "ar" ? "column-reverse" : "column"};
     position: absolute;
     padding: 15px 0;
     animation: ${openNav} 0.3s linear;
@@ -83,6 +89,7 @@ export const NavLink = styled(Link)`
   text-transform: uppercase;
   transition: 0.1s;
 `;
+
 export const NavItem = styled(Link)`
   margin: 0 10px;
   color: var(--black-color);
