@@ -1,7 +1,8 @@
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const Button = styled.button`
+const StyledButton = styled.button`
   border: none;
   outline: none;
   font-family: "Nunito Sans", sans-serif;
@@ -11,9 +12,9 @@ export const Button = styled.button`
     props.color === "white" ? `var(--black-color)` : `var(--white-color)`};
   padding: 16px 20px;
   width: ${(props) => props.block && "100%"};
-  display: block;
   cursor: pointer;
   display: flex;
+  flex-direction: ${(props) => (props.currentLanguage ? "row-reverse" : "row")};
   justify-content: center;
   align-items: center;
   /* border: ${(props) =>
@@ -25,6 +26,16 @@ export const Button = styled.button`
       props.color === "white" && `var(--light-gray-color)`};
   }
 `;
+
+export const Button = ({ children, color, block }) => {
+  const { i18n } = useTranslation();
+  const currentLanguage = i18n.language;
+  return (
+    <StyledButton currentLanguage={currentLanguage} color={color} block={block}>
+      {children}
+    </StyledButton>
+  );
+};
 
 export const ButtonLink = styled(Link)`
   border: none;

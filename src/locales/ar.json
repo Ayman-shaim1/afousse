@@ -6,6 +6,19 @@
     "men": "رجال ",
     "women": "نساء ",
     "contact": "اتصال",
-    "about":"حول"
+    "about": "حول"
+  },
+  "login": {
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "placeholderEmail": "أدخل البريد الإلكتروني",
+    "placeholderPassword": "أدخل كلمة المرور",
+    "showPassword": "إظهار كلمة المرور؟",
+    "signIn": "تسجيل الدخول",
+    "forgotPassword": "هل نسيت كلمة المرور؟",
+    "signInWithGoogle": "تسجيل الدخول باستخدام جوجل ",
+    "signInWithFacebook": "تسجيل الدخول باستخدام الفيسبوك ",
+    "newCustomer": "عميل جديد",
+    "signUp": "التسجيل؟"
   }
 }

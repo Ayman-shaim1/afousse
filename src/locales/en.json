@@ -7,5 +7,18 @@
     "women": "women",
     "contact": "contact",
     "about": "about"
+  },
+  "login": {
+    "email": "Email",
+    "password": "Password",
+    "placeholderEmail": "Enter email",
+    "placeholderPassword": "Enter password",
+    "showPassword": "Show password ?",
+    "signIn": "sign in",
+    "forgotPassword": "Forgot password ?",
+    "signInWithGoogle": "Sign in with google",
+    "signInWithFacebook": "Sign in with facebook",
+    "newCustomer": "New customer",
+    "signUp": "Sign up ?"
   }
 }

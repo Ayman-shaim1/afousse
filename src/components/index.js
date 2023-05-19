@@ -13,4 +13,6 @@ export { default as Margin } from "./Margin";
 export { default as Row } from "./Row";
 export { default as Column } from "./Column";
 export { default as Alert } from "./Alert";
+export { default as Label } from "./Label";
+
 

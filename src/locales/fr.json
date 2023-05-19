@@ -7,5 +7,18 @@
     "women": "femmes",
     "contact": "contact",
     "about": "à propos"
-  }
+  },
+  "login": {
+    "email": "Email",
+    "password": "Mot de passe",
+    "placeholderEmail": "Entrez votre email",
+    "placeholderPassword": "Entrez votre mot de passe",
+    "showPassword": "Afficher le mot de passe ?",
+    "signIn": "Se connecter",
+    "forgotPassword": "Mot de passe oublié ?",
+    "signInWithGoogle": "Se connecter avec Google",
+    "signInWithFacebook": "Se connecter avec Facebook",
+    "newCustomer": "Nouveau client",
+    "signUp": "S'inscrire ?"
+    }
 }

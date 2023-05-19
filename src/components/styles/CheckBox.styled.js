@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 
 const FormLabel = styled.label`
@@ -7,6 +8,8 @@ const FormLabel = styled.label`
 const StyledFormCheckContainer = styled.div`
   display: flex;
   align-items: center;
+  flex-direction: ${(props) =>
+    props.currentLanguage === "ar" ? "row-reverse" : "row"};
 `;
 
 const StyledFormCheckLabel = styled(FormLabel)`
@@ -14,7 +17,7 @@ const StyledFormCheckLabel = styled(FormLabel)`
   position: relative;
   padding-left: 25px;
   padding-top: 3px;
-
+  
   &::before {
     content: "";
     width: 17px;
@@ -24,6 +27,7 @@ const StyledFormCheckLabel = styled(FormLabel)`
     left: 0;
     top: 3px;
   }
+
   &::after {
     font-family: "FontAwesome";
     content: "\f00c";
@@ -58,8 +62,10 @@ const StyledFormCheck = styled.input.attrs({ type: "checkbox" })`
 `;
 
 export const CheckBox = ({ label, ...otherProps }) => {
+  const { i18n } = useTranslation();
+  const currentLanguage = i18n.language;
   return (
-    <StyledFormCheckContainer>
+    <StyledFormCheckContainer currentLanguage={currentLanguage}>
       <StyledFormCheck {...otherProps} />
       <StyledFormCheckLabel>{label}</StyledFormCheckLabel>
     </StyledFormCheckContainer>

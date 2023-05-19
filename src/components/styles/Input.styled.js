@@ -6,7 +6,8 @@ export const Input = styled.input`
   background-color: var(--light-gray-color);
   outline: none;
   width: 100%;
-  display: block;
+  display: flex;
+
   margin: 5px 0 10px 0;
 
   &:focus {
