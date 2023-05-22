@@ -15,6 +15,7 @@ import {
 } from "./styles/Header.styled";
 import Search from "./Search";
 import { useTranslation } from "react-i18next";
+
 const Header = () => {
   const [showNavBar, setShowNavBar] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
@@ -43,9 +44,7 @@ const Header = () => {
     <>
       <Search show={showSearch} onClose={closeSearchHandler} />
       <NavBar bg="black" currentLanguage={currentLanguage}>
-        <Nav>
-          <NavLink to="/home">+212 06 10 20 30 40</NavLink>
-        </Nav>
+        <Nav></Nav>
         <Nav>
           <NavDropdown>
             <NavItemIcon to="/languages">

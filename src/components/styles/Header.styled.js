@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const progressAnimation = keyframes`
   from {
@@ -25,7 +26,7 @@ export const NavBar = styled.nav`
   flex-direction: ${(props) =>
     props.currentLanguage === "ar" ? "row-reverse" : "row"};
 
-  align-content: center;
+  align-items: center;
   justify-content: space-around;
   padding: 10px 0;
   width: 100%;
@@ -59,6 +60,10 @@ export const Nav = styled.div`
 `;
 
 export const NavReponsive = styled(Nav)`
+  /* background-color: red; */
+  margin-left: ${(props) => (props.currentLanguage === "ar" ? "0" : "6%")};
+  margin-right: ${(props) => (props.currentLanguage === "ar" ? "6%" : "0")};
+
   @media (max-width: 1200px) {
     display: ${(props) => (props.show ? "flex" : "none")} !important;
     background-color: var(--white-color);
@@ -99,6 +104,7 @@ export const NavItem = styled(Link)`
   font-weight: bold;
   transition: 0.1s;
   cursor: pointer;
+  font-size: 14px;
 
   &::after {
     content: "";
@@ -161,9 +167,12 @@ export const NavDropdown = styled.div`
   }
 `;
 
-export const NavDropdownMenu = styled.div`
+export const StyledNavDropdownMenu = styled.div`
   position: absolute;
-  right: -100%;
+
+  left: ${(props) => (props.currentLanguage === "ar" ? "0" : "-80%")};
+  right: ${(props) => (props.currentLanguage === "ar" ? "-80%" : "0")};
+
   display: none;
   width: 150px;
   border: 1px solid var(--gray-color);
@@ -171,7 +180,32 @@ export const NavDropdownMenu = styled.div`
   margin-top: 1px;
   background-color: #fff;
   z-index: 2000;
+
+  @media (max-width: 520px) {
+    left: ${(props) => (props.currentLanguage === "ar" ? "0" : "-150%")};
+    right: ${(props) => (props.currentLanguage === "ar" ? "-150%" : "0")};
+  }
+  @media (max-width: 480px) {
+    left: ${(props) => (props.currentLanguage === "ar" ? "0" : "-200%")};
+    right: ${(props) => (props.currentLanguage === "ar" ? "-200%" : "0")};
+  }
+
+  @media (max-width: 310px) {
+    left: ${(props) => (props.currentLanguage === "ar" ? "0" : "-280%")};
+    right: ${(props) => (props.currentLanguage === "ar" ? "-280%" : "0")};
+  }
 `;
+
+export const NavDropdownMenu = ({ children }) => {
+  const { i18n } = useTranslation();
+  const currentLanguage = i18n.language;
+
+  return (
+    <StyledNavDropdownMenu currentLanguage={currentLanguage}>
+      {children}
+    </StyledNavDropdownMenu>
+  );
+};
 
 export const NavDropdownItem = styled(Link)`
   font-size: 12px;
@@ -180,6 +214,7 @@ export const NavDropdownItem = styled(Link)`
   border-bottom: 1px solid var(--gray-color);
   display: block;
   text-decoration: none;
+
   &:hover {
     background-color: var(--light-gray-color);
   }
