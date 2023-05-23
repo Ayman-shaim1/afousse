@@ -61,14 +61,14 @@ export const Nav = styled.div`
 
 export const NavReponsive = styled(Nav)`
   /* background-color: red; */
-  margin-left: ${(props) => (props.currentLanguage === "ar" ? "0" : "6%")};
-  margin-right: ${(props) => (props.currentLanguage === "ar" ? "6%" : "0")};
+  /* margin-left: ${(props) => (props.currentLanguage === "ar" ? "0" : "6%")};
+  margin-right: ${(props) => (props.currentLanguage === "ar" ? "6%" : "0")}; */
 
   @media (max-width: 1200px) {
     display: ${(props) => (props.show ? "flex" : "none")} !important;
     background-color: var(--white-color);
     flex-direction: ${(props) =>
-      props.currentLanguage === "ar" ? "column-reverse" : "column"};
+      props.currentLanguage === "ar" ? "column" : "column-reverse"};
     position: absolute;
     padding: 15px 0;
     animation: ${openNav} 0.3s linear;
