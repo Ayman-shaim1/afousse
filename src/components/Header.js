@@ -85,10 +85,10 @@ const Header = () => {
             {t("navbar.about")}
           </NavItem>
           <NavResponsiveItem to="/" onClick={closeNavbarHandler}>
-            Favorites
+            {t("navbar.favorites")}
           </NavResponsiveItem>
           <NavResponsiveItem to="/Login" onClick={closeNavbarHandler}>
-            Login
+            {t("navbar.signIn")}
           </NavResponsiveItem>
         </NavReponsive>
         <Nav currentLanguage={currentLanguage}>

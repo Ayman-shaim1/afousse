@@ -6,7 +6,9 @@
     "men": "men",
     "women": "women",
     "contact": "contact",
-    "about": "about"
+    "about": "about",
+    "favorites": "favorites",
+    "signIn": "Sign In"
   },
   "login": {
     "email": "Email",
@@ -20,5 +22,22 @@
     "signInWithFacebook": "Sign in with facebook",
     "newCustomer": "New customer",
     "signUp": "Sign up ?"
+  },
+  "register": {
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "placeholderName": "Enter name",
+    "placeholderEmail": "Enter email",
+    "placeholderPassword": "Enter password",
+    "placeholderConfirmPassword": "Enter confirm password",
+    "showPasswords": "Show passwords ?",
+    "signUp": "Sign up",
+    "haveAccount": "Already have an account",
+    "signIn": "Sign in ?"
+  },
+  "search": {
+    "textInputSearchPlaceholder": "Type for search here ..."
   }
 }

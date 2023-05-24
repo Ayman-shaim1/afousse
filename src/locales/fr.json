@@ -6,7 +6,9 @@
     "men": "hommes",
     "women": "femmes",
     "contact": "contact",
-    "about": "à propos"
+    "about": "à propos",
+    "favorites": "favoris",
+    "signIn": "Se connecter"
   },
   "login": {
     "email": "Email",
@@ -20,5 +22,22 @@
     "signInWithFacebook": "Se connecter avec Facebook",
     "newCustomer": "Nouveau client",
     "signUp": "S'inscrire ?"
-    }
+  },
+  "register": {
+    "name": "Nom",
+    "email": "Email",
+    "password": "Mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "placeholderName": "Entrez votre nom",
+    "placeholderEmail": "Entrez votre email",
+    "placeholderPassword": "Entrez votre mot de passe",
+    "placeholderConfirmPassword": "Confirmez votre mot de passe",
+    "showPasswords": "Afficher les mots de passe ?",
+    "signUp": "S'inscrire",
+    "haveAccount": "Vous avez déjà un compte",
+    "signIn": "Se connecter ?"
+  },
+  "search": {
+    "textInputSearchPlaceholder": "Tapez pour rechercher ici ..."
+  }
 }

@@ -6,7 +6,9 @@
     "men": "رجال ",
     "women": "نساء ",
     "contact": "اتصال",
-    "about": "حول"
+    "about": "حول",
+    "favorites": "المفضلة",
+    "signIn": "تسجيل الدخول"
   },
   "login": {
     "email": "البريد الإلكتروني",
@@ -20,5 +22,22 @@
     "signInWithFacebook": "تسجيل الدخول باستخدام الفيسبوك ",
     "newCustomer": "عميل جديد",
     "signUp": "التسجيل؟"
+  },
+  "register": {
+    "name": "الاسم",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "placeholderName": "أدخل الاسم",
+    "placeholderEmail": "أدخل البريد الإلكتروني",
+    "placeholderPassword": "أدخل كلمة المرور",
+    "placeholderConfirmPassword": "أدخل تأكيد كلمة المرور",
+    "showPasswords": "إظهار كلمات المرور؟",
+    "signUp": "اشتراك",
+    "haveAccount": "هل لديك حساب بالفعل",
+    "signIn": "تسجيل الدخول؟"
+  },
+  "search": {
+    "textInputSearchPlaceholder": "اكتب للبحث هنا ..."
   }
 }

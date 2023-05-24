@@ -15,16 +15,19 @@ const StyledFormCheckContainer = styled.div`
 const StyledFormCheckLabel = styled(FormLabel)`
   user-select: none;
   position: relative;
-  padding-left: 25px;
+  ${(props) =>
+    props.currentLanguage === "ar"
+      ? " padding-right:25px"
+      : "padding-left:25px"};
   padding-top: 3px;
-  
+
   &::before {
     content: "";
     width: 17px;
     height: 17px;
     border: 1px solid lightgray;
     position: absolute;
-    left: 0;
+    ${(props) => (props.currentLanguage === "ar" ? "right:0;" : "left:0;")};
     top: 3px;
   }
 
@@ -32,7 +35,7 @@ const StyledFormCheckLabel = styled(FormLabel)`
     font-family: "FontAwesome";
     content: "\f00c";
     position: absolute;
-    left: 0;
+    ${(props) => (props.currentLanguage === "ar" ? "right:0;" : "left:0;")};
     top: 2px;
     width: 17px;
     height: 17px;
@@ -67,7 +70,9 @@ export const CheckBox = ({ label, ...otherProps }) => {
   return (
     <StyledFormCheckContainer currentLanguage={currentLanguage}>
       <StyledFormCheck {...otherProps} />
-      <StyledFormCheckLabel>{label}</StyledFormCheckLabel>
+      <StyledFormCheckLabel currentLanguage={currentLanguage}>
+        {label}
+      </StyledFormCheckLabel>
     </StyledFormCheckContainer>
   );
 };

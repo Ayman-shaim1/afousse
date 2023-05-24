@@ -1,10 +1,12 @@
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
-export const SearchBtnClose = styled.span`
+const StyledSearchBtnClose = styled.span`
   position: absolute;
   top: 2%;
-  right: 1%;
+  ${(props) => (props.currentLanguage === "ar" ? "left:3%;" : "right:3%;")}
   color: var(--dark-gray-color);
+  z-index: 1000;
   cursor: pointer;
   font-size: 18px;
   padding: 20px;
@@ -14,7 +16,16 @@ export const SearchBtnClose = styled.span`
   }
 `;
 
-export const SearchContainer = styled.div`
+export const SearchBtnClose = ({ ...otherProps }) => {
+  const { i18n } = useTranslation();
+  const currentLanguage = i18n.language;
+
+  return (
+    <StyledSearchBtnClose currentLanguage={currentLanguage} {...otherProps} />
+  );
+};
+
+const StyledSearchContainer = styled.div`
   position: fixed;
   width: 100%;
   height: 100%;
@@ -24,9 +35,20 @@ export const SearchContainer = styled.div`
   bottom: 0;
   background-color: white;
   z-index: 5000;
-
+  text-align: ${(props) => (props.currentLanguage === "ar" ? "right" : "left")};
   display: ${(props) => (props.show ? "block" : "none")};
 `;
+
+export const SearchContainer = ({ children, show }) => {
+  const { i18n } = useTranslation();
+  const currentLanguage = i18n.language;
+
+  return (
+    <StyledSearchContainer currentLanguage={currentLanguage} show={show}>
+      {children}
+    </StyledSearchContainer>
+  );
+};
 
 export const SearchInputContainer = styled.div`
   position: absolute;
@@ -38,7 +60,7 @@ export const SearchInputContainer = styled.div`
 export const SearchContent = styled.div`
   position: relative;
   display: block;
-  width:250px;
+  width: 250px;
   @media (min-width: 576px) {
     width: 540px;
   }
@@ -56,23 +78,39 @@ export const SearchContent = styled.div`
   }
 `;
 
-export const SearchInput = styled.input`
+const StyledSearchInput = styled.input`
   border: none;
   border-bottom: 1px solid var(--dark-gray-color);
   width: 100%;
   outline: none;
   padding: 18px 30px 18px 5px;
   font-size: 18px;
-  width:100%;
+  width: 100%;
+  text-align: ${(props) => (props.currentLanguage === "ar" ? "right" : "left")};
 `;
 
-export const SearchInputIcon = styled.span`
+export const SearchInput = ({ ...otherProps }) => {
+  const { i18n } = useTranslation();
+  const currentLanguage = i18n.language;
+  return (
+    <StyledSearchInput currentLanguage={currentLanguage} {...otherProps} />
+  );
+};
+
+const StyledSearchInputIcon = styled.span`
   position: absolute;
   top: 32%;
-  right: 0;
+  ${(props) => (props.currentLanguage === "ar" ? "left:0;" : "right:0;")};
   color: var(--dark-gray-color);
   cursor: pointer;
   &:hover {
     color: var(--gray-color);
   }
 `;
+export const SearchInputIcon = ({ ...otherProps }) => {
+  const { i18n } = useTranslation();
+  const currentLanguage = i18n.language;
+  return (
+    <StyledSearchInputIcon currentLanguage={currentLanguage} {...otherProps} />
+  );
+};

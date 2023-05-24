@@ -1,14 +1,23 @@
 import React, { useState } from "react";
-import { Button, Center, Column, Input, Margin, Row } from "../components";
+import {
+  Button,
+  Center,
+  Column,
+  Input,
+  Label,
+  Margin,
+  Row,
+} from "../components";
 import { CheckBox } from "../components/styles/CheckBox.styled";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const RegisterPage = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPasswrod] = useState("");
   const [confirmPassword, setConfirmPasswrod] = useState("");
-
+  const { t } = useTranslation();
   return (
     <>
       <Margin top={"60"}>
@@ -16,50 +25,49 @@ const RegisterPage = () => {
           <Column xs={12} sm={12} md={1} lg={2} xl={3}></Column>
           <Column xs={12} sm={12} md={10} lg={6} xl={6}>
             <form>
-              <label>Name</label>
+              <Label>{t("register.name")}</Label>
               <Input
-                placeholder={"Enter name"}
+                placeholder={t("register.placeholderName")}
                 value={name}
                 type="text"
                 onChange={(e) => setName(e.target.value)}
               />
-              <label>Email</label>
+              <Label>{t("register.email")}</Label>
               <Input
-                placeholder={"Enter email"}
+                placeholder={t("register.placeholderEmail")}
                 value={email}
                 type="email"
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <label>Password</label>
+              <Label>{t("register.password")}</Label>
               <Input
-                placeholder={"Enter password"}
+                placeholder={t("register.placeholderPassword")}
                 type="password"
                 value={password}
                 onChange={(e) => setPasswrod(e.target.value)}
               />
-              <label>Confrim password</label>
+              <Label>{t("register.confirmPassword")}</Label>
               <Input
-                placeholder={"Enter confirm password"}
+                placeholder={t("register.placeholderConfirmPassword")}
                 type="password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPasswrod(e.target.value)}
               />
               <Margin bottom={"20"} top={"20"}>
-                <CheckBox label={"show passwords ?"} />
+                <CheckBox label={t("register.showPasswords")} />
               </Margin>
               <Button block color="black">
-                Register
+                {t("register.signUp")}
               </Button>
             </form>
 
             <Margin top={"20"} bottom={"30"}>
               <Center horizontal>
                 <p>
-                  Already have an account{" "}
+                  {t("register.haveAccount")}{" "}
                   <Link Link to="/login">
-                    Login
+                    {t("register.signIn")}
                   </Link>
-                  ?
                 </p>
               </Center>
             </Margin>

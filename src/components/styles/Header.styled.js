@@ -67,8 +67,7 @@ export const NavReponsive = styled(Nav)`
   @media (max-width: 1200px) {
     display: ${(props) => (props.show ? "flex" : "none")} !important;
     background-color: var(--white-color);
-    flex-direction: ${(props) =>
-      props.currentLanguage === "ar" ? "column" : "column-reverse"};
+    flex-direction: column;
     position: absolute;
     padding: 15px 0;
     animation: ${openNav} 0.3s linear;

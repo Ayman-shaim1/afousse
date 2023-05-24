@@ -7,9 +7,11 @@ import {
   SearchInputIcon,
   SearchContent,
 } from "./styles/Search.styled";
+import { useTranslation } from "react-i18next";
 
 const Search = ({ show, onClose }) => {
   const [search, setSearch] = useState("");
+  const { t } = useTranslation();
 
   const closeHandler = () => {
     setSearch("");
@@ -21,11 +23,11 @@ const Search = ({ show, onClose }) => {
   return (
     <SearchContainer show={show}>
       <SearchBtnClose className="bi bi-x-lg" onClick={closeHandler} />
-      <SearchInputContainer>
+      <SearchInputContainer>  
         <SearchContent>
           <SearchInputIcon className="bi bi-search" />
           <SearchInput
-            placeholder="Type your search here "
+            placeholder={t('search.textInputSearchPlaceholder')}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />

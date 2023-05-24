@@ -7,7 +7,7 @@ export const Input = styled.input`
   outline: none;
   width: 100%;
   display: flex;
-
+  text-align: ${(props) => (props.currentLanguage === "ar" ? "right" : "left")};
   margin: 5px 0 10px 0;
 
   &:focus {
