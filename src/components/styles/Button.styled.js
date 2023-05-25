@@ -21,7 +21,8 @@ const StyledButton = styled.button`
     props.color === "white" ? `1px solid var(--light-gray-color)` : `none`}; */
   margin: 7px 0;
   &:hover {
-    opacity: ${(props) => (props.color === "white" ? "1" : `0.8`)};
+    transform: scale(0.98);
+
     background-color: ${(props) =>
       props.color === "white" && `var(--light-gray-color)`};
   }
@@ -48,6 +49,6 @@ export const ButtonLink = styled(Link)`
   display: inline-block;
   cursor: pointer;
   &:hover {
-    opacity: 0.9;
+    transform: scale(0.98);
   }
 `;

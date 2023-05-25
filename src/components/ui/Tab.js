@@ -1,5 +1,5 @@
 import React from "react";
-import { Tab as SCTab, TabTitle, TabContent } from "./styles/Tabs.styled";
+import { Tab as SCTab, TabTitle, TabContent } from "../styles/Tabs.styled";
 
 const Tab = ({ children, title, active, onClick }) => {
   return (

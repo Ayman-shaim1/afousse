@@ -4,16 +4,17 @@ import {
   NavReponsive,
   NavBar,
   NavItem,
-  NavLogoLink,
   NavItemIcon,
   NavDropdown,
   NavDropdownItem,
   NavDropdownMenu,
   NavBtnToggleMenu,
   NavResponsiveItem,
-} from "./styles/Header.styled";
+  NavLogo,
+} from "../styles/Header.styled";
 import Search from "./Search";
 import { useTranslation } from "react-i18next";
+import Logo from "../../assets/images/logo.svg";
 
 const Header = () => {
   const [showNavBar, setShowNavBar] = useState(false);
@@ -64,7 +65,7 @@ const Header = () => {
         </Nav>
       </NavBar>
       <NavBar currentLanguage={currentLanguage}>
-        <NavLogoLink to="/">Afousse</NavLogoLink>
+        <NavLogo src={Logo} alt="logo" />
         <NavReponsive show={showNavBar} currentLanguage={currentLanguage}>
           <NavItem to="/home" onClick={closeNavbarHandler}>
             {t("navbar.home")}

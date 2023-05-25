@@ -65,6 +65,8 @@ h6 {
   margin:2px;
 }
 
+
+
 `;
 
 export default GlobalStyle;

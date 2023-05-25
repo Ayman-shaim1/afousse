@@ -8,7 +8,9 @@ import {
   Margin,
   Row,
   Label,
-} from "../components";
+  Breadcrumb,
+  BreadcrumbItem,
+} from "../components/ui";
 
 import { Link } from "react-router-dom";
 import { CheckBox } from "../components/styles/CheckBox.styled";
@@ -23,6 +25,10 @@ const LoginPage = () => {
 
   return (
     <>
+      <Breadcrumb>
+        <BreadcrumbItem to="/home">Home</BreadcrumbItem>
+        <BreadcrumbItem>Login</BreadcrumbItem>
+      </Breadcrumb>
       <Margin top={"60"}>
         <Row>
           <Column xs={12} sm={12} md={1} lg={2} xl={3}></Column>

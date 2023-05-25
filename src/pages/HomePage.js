@@ -1,5 +1,5 @@
 import React from "react";
-import { Center } from "../components/";
+import { Center } from "../components/ui";
 import { useTranslation } from "react-i18next";
 
 const HomePage = () => {

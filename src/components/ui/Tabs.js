@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Tabs as SCTabs } from "./styles/Tabs.styled";
+import { Tabs as SCTabs } from "../styles/Tabs.styled";
 
 const Tabs = ({ children }) => {
   const [activeChild, setActiveChild] = useState(null);

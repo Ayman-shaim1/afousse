@@ -1,5 +1,5 @@
 import React from "react";
-import { Column as STCColumn } from "./styles/Column.styled";
+import { Column as STCColumn } from "../styles/Column.styled";
 
 const Column = ({ children, xs, md, lg, xl }) => {
   return (

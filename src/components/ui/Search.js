@@ -6,7 +6,7 @@ import {
   SearchBtnClose,
   SearchInputIcon,
   SearchContent,
-} from "./styles/Search.styled";
+} from "../styles/Search.styled";
 import { useTranslation } from "react-i18next";
 
 const Search = ({ show, onClose }) => {

@@ -71,7 +71,7 @@ export const NavReponsive = styled(Nav)`
     position: absolute;
     padding: 15px 0;
     animation: ${openNav} 0.3s linear;
-    top: 10%;
+    top: 9%;
     width: 100%;
     z-index: 1000;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 4px -1px,

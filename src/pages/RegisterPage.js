@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import {
+  Breadcrumb,
+  BreadcrumbItem,
   Button,
   Center,
   Column,
@@ -7,7 +9,7 @@ import {
   Label,
   Margin,
   Row,
-} from "../components";
+} from "../components/ui";
 import { CheckBox } from "../components/styles/CheckBox.styled";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -21,6 +23,10 @@ const RegisterPage = () => {
   return (
     <>
       <Margin top={"60"}>
+        <Breadcrumb>
+          <BreadcrumbItem to="/home">Home</BreadcrumbItem>
+          <BreadcrumbItem>Register</BreadcrumbItem>
+        </Breadcrumb>
         <Row>
           <Column xs={12} sm={12} md={1} lg={2} xl={3}></Column>
           <Column xs={12} sm={12} md={10} lg={6} xl={6}>

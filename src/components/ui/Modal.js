@@ -6,7 +6,7 @@ import {
   ModalHeader,
   ModalOverlay,
   ModalTitle,
-} from "./styles/Modal.styled";
+} from "../styles/Modal.styled";
 
 const Modal = ({ title, children, show, onClose }) => {
  

@@ -1,5 +1,5 @@
 import React from "react";
-import { Input as SCInput } from "./styles/Input.styled";
+import { Input as SCInput } from "../styles/Input.styled";
 import { useTranslation } from "react-i18next";
 
 const Input = ({ ...props }) => {
