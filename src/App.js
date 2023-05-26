@@ -2,8 +2,7 @@ import GlobalStyle from "./GlobalStyle";
 import { Header } from "./components/ui";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { HomePage, LoginPage, RegisterPage, ShopPage } from "./pages";
-import { Container } from "./components/styles/Container.styled";
-
+import { Container } from "./components/ui";
 
 const App = () => {
   return (
@@ -18,7 +17,6 @@ const App = () => {
             <Route exact path="/Login" element={<LoginPage />} />
             <Route exact path="/Register" element={<RegisterPage />} />
             <Route exact path="/Shop" element={<ShopPage />} />
-
           </Routes>
         </Container>
       </main>

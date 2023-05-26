@@ -8,6 +8,7 @@ const Margin = ({ top, left, bottom, right, children }) => {
         marginLeft: left + "px",
         marginRight: right + "px",
         marginBottom: bottom + "px",
+        display:'block'
       }}
     >
       {children}

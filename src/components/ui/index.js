@@ -1,6 +1,8 @@
 export { default as Header } from "./Header";
 export { default as Modal } from "./Modal";
 export { default as Center } from "./Center";
+export { default as Container } from "./Container";
+export { default as Flex } from "./Flex";
 export { default as Offcanvas } from "./Offcanvas";
 export { default as Search } from "./Search";
 export { default as Input } from "./Input";
@@ -16,6 +18,8 @@ export { default as Alert } from "./Alert";
 export { default as Label } from "./Label";
 export { default as Breadcrumb } from "./Breadcrumb";
 export { default as BreadcrumbItem } from "./BreadcrumbItem";
+
+
 
 
 

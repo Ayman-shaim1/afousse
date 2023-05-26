@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 export const Product = styled.div`
@@ -26,3 +27,34 @@ export const ProductPrice = styled.small`
   color: var(--dark-gray-color);
   font-weight: bold;
 `;
+
+export const ProductInfoContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+export const ProductInfo = styled.div``;
+
+const StyledProductInfoFavButton = styled.button`
+  background-color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  .red {
+    color:var(--red-color);
+  }
+`;
+
+export const ProductInfoFavButton = ({ ...otherProps }) => {
+  const [className, setClassName] = useState("bi bi-heart");
+
+  return (
+    <StyledProductInfoFavButton
+      {...otherProps}
+      onMouseOver={() => setClassName("bi bi-heart-fill red")}
+      onMouseLeave={() => setClassName("bi bi-heart ")}
+    >
+      <i className={className}></i>
+    </StyledProductInfoFavButton>
+  );
+};
