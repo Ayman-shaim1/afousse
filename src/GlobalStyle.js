@@ -56,7 +56,7 @@ h5,
 h6 {
   text-transform: uppercase;
   font-weight: 400;
-  
+  margin:7px 0;
 }
 
 .ic-img{
@@ -65,7 +65,7 @@ h6 {
   margin:2px;
 }
 
-.range-slider {
+/* .range-slider {
   width: 400px;
   position: relative;
   margin: 15px 0 30px 0;
@@ -97,7 +97,7 @@ input[type=range]::-webkit-slider-runnable-track {
   background: #e8e8e8;
   border-radius: 3px;
   border: none;
-}
+} */
 
 `;
 

@@ -1,16 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Breadcrumb,
   BreadcrumbItem,
   Column,
-  Container,
   Row,
   Flex,
   Margin,
   Input,
   Alert,
 } from "../components/ui";
-import { Product, PriceSlider } from "../components";
+import { Product, PriceSlider, ColorPicker } from "../components";
 import { v4 as uuid } from "uuid";
 import { Link } from "react-router-dom";
 
@@ -20,126 +19,151 @@ const productData = [
     name: "Lorem ipsum dolor ",
     price: 199.9,
     image: require("../assets/images/product.png"),
+    rating: 3,
   },
   {
     id: uuid(),
     name: "Lorem ipsum dolor ",
     price: 199.9,
     image: require("../assets/images/product.png"),
+    rating: 4.5,
   },
   {
     id: uuid(),
     name: "Lorem ipsum dolor ",
     price: 199.9,
     image: require("../assets/images/product.png"),
+    rating: 4.5,
   },
   {
     id: uuid(),
     name: "Lorem ipsum dolor ",
     price: 199.9,
     image: require("../assets/images/product.png"),
+    rating: 5,
   },
   {
     id: uuid(),
     name: "Lorem ipsum dolor ",
     price: 199.9,
     image: require("../assets/images/product.png"),
+    rating: 4.5,
   },
   {
     id: uuid(),
     name: "Lorem ipsum dolor ",
     price: 199.9,
     image: require("../assets/images/product.png"),
+    rating: 4.5,
   },
   {
     id: uuid(),
     name: "Lorem ipsum dolor ",
     price: 199.9,
     image: require("../assets/images/product.png"),
+    rating: 4.5,
   },
   {
     id: uuid(),
     name: "Lorem ipsum dolor ",
     price: 199.9,
     image: require("../assets/images/product.png"),
+    rating: 4.5,
   },
   {
     id: uuid(),
     name: "Lorem ipsum dolor ",
     price: 199.9,
     image: require("../assets/images/product.png"),
+    rating: 4.5,
   },
   {
     id: uuid(),
     name: "Lorem ipsum dolor ",
     price: 199.9,
     image: require("../assets/images/product.png"),
+    rating: 4.5,
   },
   {
     id: uuid(),
     name: "Lorem ipsum dolor ",
     price: 199.9,
     image: require("../assets/images/product.png"),
+    rating: 4.5,
   },
   {
     id: uuid(),
     name: "Lorem ipsum dolor ",
     price: 199.9,
     image: require("../assets/images/product.png"),
+    rating: 4.5,
   },
   {
     id: uuid(),
     name: "Lorem ipsum dolor ",
     price: 199.9,
     image: require("../assets/images/product.png"),
+    rating: 4.5,
   },
   {
     id: uuid(),
     name: "Lorem ipsum dolor ",
     price: 199.9,
     image: require("../assets/images/product.png"),
+    rating: 4.5,
   },
   {
     id: uuid(),
     name: "Lorem ipsum dolor ",
     price: 199.9,
     image: require("../assets/images/product.png"),
+    rating: 4.5,
   },
   {
     id: uuid(),
     name: "Lorem ipsum dolor ",
     price: 199.9,
     image: require("../assets/images/product.png"),
+    rating: 4.5,
   },
   {
     id: uuid(),
     name: "Lorem ipsum dolor ",
     price: 199.9,
     image: require("../assets/images/product.png"),
+    rating: 4.5,
   },
   {
     id: uuid(),
     name: "Lorem ipsum dolor ",
     price: 199.9,
     image: require("../assets/images/product.png"),
+    rating: 4.5,
   },
   {
     id: uuid(),
     name: "Lorem ipsum dolor ",
     price: 199.9,
     image: require("../assets/images/product.png"),
+    rating: 4.5,
   },
   {
     id: uuid(),
     name: "Lorem ipsum dolor ",
     price: 199.9,
     image: require("../assets/images/product.png"),
+    rating: 4.5,
   },
 ];
 
 const ShopPage = () => {
+  const [minPrice, setMinPrice] = useState(1000);
+  const [maxPrice, setMaxPrice] = useState(3000);
+
+  const [color, setColor] = useState("");
+
   return (
-    <Container>
+    <>
       <Breadcrumb>
         <BreadcrumbItem to="/home">Home</BreadcrumbItem>
         <BreadcrumbItem>Shop</BreadcrumbItem>
@@ -160,32 +184,53 @@ const ShopPage = () => {
         </Column>
       </Row>
       <Row>
-        <Column xl={3} lg={3} md={3} sm={12} xs={12}>
+        <Column xl={3} lg={3} md={12} sm={12} xs={12}>
           <div>
             <h5>Category</h5>
             <Flex flexDirection="column">
               <Margin top={"5"} bottom={"5"}>
-                <Link>Tode bag</Link>
+                <Link className="cat-link" to={"/shop?search=todebag"}>
+                  Tode bag
+                </Link>
               </Margin>
               <Margin top={"5"} bottom={"5"}>
-                <Link>Tableau</Link>
+                <Link className="cat-link" to={"/shop?search=tableaux"}>
+                  Tableaux
+                </Link>
               </Margin>
               <Margin top={"5"} bottom={"5"}>
-                <Link>T-shirt</Link>
+                <Link className="cat-link" to={"/shop?search=t-shirt"}>
+                  T-shirt
+                </Link>
               </Margin>
             </Flex>
           </div>
           <div>
             <h5>Color</h5>
-            <Row></Row>
+            <ColorPicker
+              color={color}
+              pickColor={setColor}
+              colors={[
+                "var(--secondary-color)",
+                "var(--red-color)",
+                "var(--green-color)",
+                "var(--info-color)",
+                "var(--yellow-color)",
+              ]}
+            />
           </div>
           <div>
             <h5>Price</h5>
-            <PriceSlider />
+            <PriceSlider
+              minPrice={minPrice}
+              maxPrice={maxPrice}
+              minPriceChange={setMinPrice}
+              maxPriceChange={setMaxPrice}
+            />
           </div>
-          <div>
+          {/* <div>
             <h5>Size</h5>
-          </div>
+          </div> */}
         </Column>
         <Column xl={9} lg={9} md={9} sm={12} xs={12}>
           <Row>
@@ -197,7 +242,7 @@ const ShopPage = () => {
           </Row>
         </Column>
       </Row>
-    </Container>
+    </>
   );
 };
 

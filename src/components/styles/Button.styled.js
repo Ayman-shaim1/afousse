@@ -41,14 +41,27 @@ export const Button = ({ children, color, block }) => {
 export const ButtonLink = styled(Link)`
   border: none;
   outline: none;
+  font-family: "Nunito Sans", sans-serif;
   background-color: ${(props) =>
     props.color ? `var(--${props.color}-color)` : `var(--primary-color)`};
   color: ${(props) =>
     props.color === "white" ? `var(--black-color)` : `var(--white-color)`};
   padding: 16px 20px;
-  display: inline-block;
+  width: ${(props) => (props.block ? "100%" : "100px")};
+  text-align: center;
+  text-decoration: none;
   cursor: pointer;
+  display: block;
+  flex-direction: ${(props) => (props.currentLanguage ? "row-reverse" : "row")};
+  justify-content: center;
+  align-items: center;
+  /* border: ${(props) =>
+    props.color === "white" ? `1px solid var(--light-gray-color)` : `none`}; */
+  margin: 7px 0;
   &:hover {
     transform: scale(0.98);
+
+    background-color: ${(props) =>
+      props.color === "white" && `var(--light-gray-color)`};
   }
 `;

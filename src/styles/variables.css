@@ -29,8 +29,11 @@
   --bs-info-bg: #d2ebf5;
   --bs-info-border-color: #bce1f1;
 
-
   --bs-white-color: #999999;
   --bs-white-bg: white;
   --bs-white-border-color: white;
+
+  --bs-gray-color: #8e8e8e;
+  --bs-gray-bg: #f4f4f4;
+  --bs-gray-border-color: #d1d1d1;
 }

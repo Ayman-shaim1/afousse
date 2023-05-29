@@ -1,18 +1,20 @@
-import React, { useState } from "react";
-// import { PriceSliderContainer, RangeSlider } from "./styles/PriceSlider.styled";
+import {
+  RangeSlider,
+  PriceSlider as SCPriceSlider,
+} from "./styles/PriceSlider.styled";
 
-const PriceSlider = () => {
-  const [minPrice, setMinPrice] = useState(1000);
-  const [maxPrice, setMaxPrice] = useState(3000);
-
+const PriceSlider = ({
+  minPrice = 1000,
+  maxPrice = 3000,
+  minPriceChange,
+  maxPriceChange,
+}) => {
   const handleMinPriceChange = (e) => {
-    if(e.target.value < maxPrice)
-    setMinPrice(parseInt(e.target.value));
+    if (e.target.value < maxPrice) minPriceChange(parseInt(e.target.value));
   };
 
   const handleMaxPriceChange = (e) => {
-    if(e.target.value > minPrice)
-    setMaxPrice(parseInt(e.target.value));
+    if (e.target.value > minPrice) maxPriceChange(parseInt(e.target.value));
   };
 
   return (
@@ -21,26 +23,22 @@ const PriceSlider = () => {
       <br />
       <small>max:{maxPrice} DH</small>
       <br />
-      <div class="range-slider">
-        <input
-          type="range"
-          class="min-price"
+      <RangeSlider>
+        <SCPriceSlider
           value={minPrice}
           onChange={handleMinPriceChange}
           min="10"
           max="5000"
           step="10"
         />
-        <input
-          type="range"
-          class="max-price"
+        <SCPriceSlider
           value={maxPrice}
           onChange={handleMaxPriceChange}
           min="10"
           max="5000"
           step="10"
         />
-      </div>
+      </RangeSlider>
     </>
   );
 };

@@ -9,12 +9,14 @@ import {
   ProductInfo,
   ProductInfoFavButton,
 } from "./styles/Product.styled";
-import { Button } from "./ui";
+import { Button, Flex, Margin } from "./ui";
+import { Link } from "react-router-dom";
+import Rating from "./Rating";
 
 const Product = ({ product }) => {
   return (
     <StyledProduct>
-      <ProductImageContainer>
+      <ProductImageContainer to={`/product-details/${product.id}`}>
         <ProductImage src={product.image} alt="product" />
       </ProductImageContainer>
       <ProductInfoContainer>
@@ -22,8 +24,16 @@ const Product = ({ product }) => {
           <ProductName>{product.name}</ProductName>
           <ProductPrice>{product.price} DH</ProductPrice>
         </ProductInfo>
-        <ProductInfoFavButton></ProductInfoFavButton>
+        <ProductInfoFavButton />
       </ProductInfoContainer>
+      <Margin top={10}>
+        <Flex horizontal justifyContent={"space-between"}>
+          <Rating value={product.rating} />
+          <Link to={`/product-details/${product.id}`}>
+            <small>view details</small>
+          </Link>
+        </Flex>
+      </Margin>
       <Button color="white" block>
         Add to cart
       </Button>

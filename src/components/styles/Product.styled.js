@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Product = styled.div`
@@ -7,18 +8,25 @@ export const Product = styled.div`
     font-size: 12px;
   }
 `;
-export const ProductImageContainer = styled.div`
-  position: relative;
+export const ProductImageContainer = styled(Link)`
   width: 100%;
+  height: 100%;
   z-index: 10;
+  cursor: pointer;
+
+  :hover {
+    opacity: 0.5;
+  }
 `;
 export const ProductImage = styled.img`
   width: 100%;
+  height: 100%;
 `;
 
-export const ProductName = styled.span`
+export const ProductName = styled.h6`
   display: block;
-  font-size: 15px;
+  font-size: 12px;
+  margin:0;
 `;
 
 export const ProductPrice = styled.small`
@@ -41,7 +49,7 @@ const StyledProductInfoFavButton = styled.button`
   outline: none;
   cursor: pointer;
   .red {
-    color:var(--red-color);
+    color: var(--red-color);
   }
 `;
 
