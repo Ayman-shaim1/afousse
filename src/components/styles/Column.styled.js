@@ -75,7 +75,7 @@ export const Column = styled.div`
         : props.md === 5
         ? "41.66%"
         : props.md === 6
-        ? " 50%"
+        ? "50%"
         : props.md === 7
         ? "58.33%"
         : props.md === 8
@@ -142,5 +142,4 @@ export const Column = styled.div`
         ? "91.66%"
         : "100%"};
   }
-  
 `;

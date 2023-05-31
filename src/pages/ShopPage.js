@@ -186,7 +186,9 @@ const ShopPage = () => {
       <Row>
         <Column xl={3} lg={3} md={12} sm={12} xs={12}>
           <div>
-            <h5>Category</h5>
+            <Margin top={"30"} bottom={"10"}>
+              <h4>Category</h4>
+            </Margin>
             <Flex flexDirection="column">
               <Margin top={"5"} bottom={"5"}>
                 <Link className="cat-link" to={"/shop?search=todebag"}>
@@ -206,7 +208,9 @@ const ShopPage = () => {
             </Flex>
           </div>
           <div>
-            <h5>Color</h5>
+            <Margin top={"30"} bottom={"10"}>
+              <h4>Color</h4>
+            </Margin>
             <ColorPicker
               color={color}
               pickColor={setColor}
@@ -216,11 +220,13 @@ const ShopPage = () => {
                 "var(--green-color)",
                 "var(--info-color)",
                 "var(--yellow-color)",
-              ]}
+               ]}
             />
           </div>
           <div>
-            <h5>Price</h5>
+            <Margin top={"30"} bottom={"10"}>
+              <h4>Price</h4>
+            </Margin>
             <PriceSlider
               minPrice={minPrice}
               maxPrice={maxPrice}

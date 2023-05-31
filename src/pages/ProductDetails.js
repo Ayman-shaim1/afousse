@@ -1,36 +1,70 @@
 import React, { useState } from "react";
 import {
   Alert,
+  Breadcrumb,
+  BreadcrumbItem,
   Button,
   ButtonLink,
   Column,
   Divider,
   Flex,
+  ImagePopup,
   Margin,
   Row,
 } from "../components/ui";
 import image from "../assets/images/product.png";
 import { ColorPicker, Rating } from "../components";
+import { ProductImage, ProductMiniImage } from "./styles/ProductDetails.styled";
 
 const ProductDetails = () => {
   const [color, setColor] = useState("");
+  const [showImgPp, setShowImgPp] = useState(false);
+  const [imgPp, setImgPp] = useState(null);
+
+  const showImagePPHandler = (e) => {
+    setImgPp(e.target.src);
+    setShowImgPp(true);
+  };
 
   return (
     <>
-      <ButtonLink to="/shop" color="white">
-        go back
-      </ButtonLink>
+      <Breadcrumb>
+        <BreadcrumbItem to="/home">Home</BreadcrumbItem>
+        <BreadcrumbItem to="/shop">Shop</BreadcrumbItem>
+        <BreadcrumbItem>Product details</BreadcrumbItem>
+      </Breadcrumb>
+      <ImagePopup
+        image={imgPp}
+        show={showImgPp}
+        onClose={() => setShowImgPp(false)}
+      />
+      <Margin bottom={"30"}>
+        <ButtonLink to="/shop" color="white">
+          go back
+        </ButtonLink>
+      </Margin>
       <Row>
         <Column xl={6} lg={6} md={6} sm={12} xs={12}>
-          <img
-            src={image}
-            alt="product"
-            style={{ width: "100%", height: "100%" }}
-          />
+          <Flex>
+            <Flex flexDirection={"column"}>
+              <ProductMiniImage src={image} alt="product" />
+              <ProductMiniImage src={image} alt="product" />
+              <ProductMiniImage src={image} alt="product" />
+              <ProductMiniImage src={image} alt="product" />
+              <ProductMiniImage src={image} alt="product" />
+              <ProductMiniImage src={image} alt="product" />
+            </Flex>
+            <ProductImage
+              onClick={showImagePPHandler}
+              src={image}
+              alt="product"
+              style={{ width: "100%", height: "100%" }}
+            />
+          </Flex>
         </Column>
         <Column xl={6} lg={6} md={6} sm={12} xs={12}>
           <Flex alignItems={"center"} justifyContent={"space-between"}>
-            <h5> Lorem ipsum dolor sit amet.</h5>
+            <h2> Lorem ipsum dolor sit amet.</h2>
             <Rating value={4} text={"from 1000 users"} />
           </Flex>
           <Flex alignItems={"center"}>
@@ -62,8 +96,7 @@ const ProductDetails = () => {
           />
           <h5>Quantity</h5>
           <Divider />
-
-          <Button block> add to card</Button>
+          <Button block>Add to card</Button>
           <Alert type={"gray"}>
             <h5 style={{ color: "var(--primary-color)" }}>Livraison</h5>
             <p>
@@ -84,6 +117,12 @@ const ProductDetails = () => {
             </p>
           </Alert>
         </Column>
+      </Row>
+      <Row>
+        <Column xl={6} lg={6} md={6} sm={12} xs={12}>
+          
+        </Column>
+        <Column xl={6} lg={6} md={6} sm={12} xs={12}></Column>
       </Row>
     </>
   );

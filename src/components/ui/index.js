@@ -20,6 +20,8 @@ export { default as Alert } from "./Alert";
 export { default as Label } from "./Label";
 export { default as Breadcrumb } from "./Breadcrumb";
 export { default as BreadcrumbItem } from "./BreadcrumbItem";
+export { default as ImagePopup } from "./ImagePopup";
+
 
 
 
