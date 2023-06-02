@@ -13,7 +13,7 @@ import {
   Row,
 } from "../components/ui";
 import image from "../assets/images/product.png";
-import { ColorPicker, Rating } from "../components";
+import { ColorPicker, Rating, Review } from "../components";
 import { ProductImage, ProductMiniImage } from "./styles/ProductDetails.styled";
 
 const ProductDetails = () => {
@@ -118,12 +118,19 @@ const ProductDetails = () => {
           </Alert>
         </Column>
       </Row>
-      <Row>
-        <Column xl={6} lg={6} md={6} sm={12} xs={12}>
-          
-        </Column>
-        <Column xl={6} lg={6} md={6} sm={12} xs={12}></Column>
-      </Row>
+      <Margin top={'50'}>
+        <Row>
+          <Column xl={6} lg={6} md={6} sm={12} xs={12}>
+            <Review />
+            <Review />
+            <Review />
+            <Review />
+            <Review />
+            <Review />
+          </Column>
+          <Column xl={6} lg={6} md={6} sm={12} xs={12}></Column>
+        </Row>
+      </Margin>
     </>
   );
 };
